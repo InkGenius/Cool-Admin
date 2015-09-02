@@ -149,13 +149,6 @@ public class UserController {
         modelMap.put(STEPS,steps);
 
         List<User> users = userService.findAllUsers();
-//        List<Map<String,Object>> userMapList = userService.convertUsersToMap(users);
-//        for(Map<String,Object> map : userMapList){
-//            Iterator<String> iter = map.keySet().iterator();
-//            while (iter.hasNext()) {
-//                System.out.println(iter.next());
-//            }
-//        }
         modelMap.put(USERS, users);
 
         return modelAndView;
