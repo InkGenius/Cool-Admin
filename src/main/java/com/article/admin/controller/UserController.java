@@ -5,12 +5,14 @@ import com.article.admin.service.IUserService;
 import com.article.model.StepBean;
 import com.article.model.User;
 import com.article.model.UserRole;
+import com.article.model.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import sun.org.mozilla.javascript.internal.ast.IfStatement;
 
@@ -88,6 +90,8 @@ public class UserController {
 
         return modelAndView;
     }
+
+
     @RequestMapping(value = "/admin/updateUser.html",method = RequestMethod.POST)
     public ModelAndView updateUser(long id,String realName,String phoneNumber,String email,String roleText){
 
@@ -99,6 +103,36 @@ public class UserController {
         userService.updateUser(user);
 
         return index();
+    }
+
+    @RequestMapping(value = "/admin/ajaxValidateUsername.html",method = RequestMethod.GET)
+    public @ResponseBody Test ajaxValidateUsername(String username){
+        User currentUser = userService.findUserByUsername(username);
+//        boolean valid = false;
+        Test test = new Test();
+        if (currentUser == null){
+//            valid = true;
+            test.setValid(true);
+//            System.out.println(valid);
+        }else {
+            test.setValid(false);
+        }
+//        Map<String,Object> map = new HashMap<String, Object>();
+//        map.put("valid", valid);
+//        System.out.println(valid);
+//        String json = "[{\"valid\": true}]";
+//        System.out.println(json);
+        return test;
+    }
+
+    @RequestMapping(value = "/admin/ajaxValidateEmail.html",method = RequestMethod.POST)
+    public @ResponseBody boolean ajaxValidateEmail(String email){
+        User currentUser = userService.findUserByEmail(email);
+        boolean valid = true;
+        if (currentUser != null){
+            valid = false;
+        }
+        return valid;
     }
 
     @RequestMapping(value = "/admin/deleteUser.html")

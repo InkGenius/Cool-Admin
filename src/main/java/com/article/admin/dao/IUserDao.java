@@ -24,4 +24,6 @@ public interface IUserDao extends IBaseModelDao<User,Long>{
      * @return
      */
     public User findUserByUsername(String username);
+
+    public User findUserByEmail(String email);
 }

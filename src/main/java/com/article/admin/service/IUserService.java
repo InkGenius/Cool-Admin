@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
- * User: yifan
+ * User:
  * Date: 13-11-12
  * Time: 下午2:22
  * To change this template use File | Settings | File Templates.
@@ -16,6 +16,7 @@ public interface IUserService {
 
     public User findUserById(long id);
     public User findUserByUsername(String username);
+    public User findUserByEmail(String email);
     public void updateUser(User user);
     public void addUser(User user);
     public void deleteUser(User user);

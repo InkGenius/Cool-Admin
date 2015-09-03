@@ -17,14 +17,16 @@
             <h4 class="modal-title" id="myModalLabel">用户信息</h4>
         </div>
         <div class="modal-body">
-            <form class="form-horizontal" action="/admin/addUser.html" method="POST">
+
+            <form class="form-horizontal" id="defaultForm" action="/admin/addUser.html" method="POST">
+
                 <div class="form-group">
                     <label for="username" class="col-sm-2 control-label">用户名</label>
 
                     <div class="input-group col-sm-9">
                         <input type="text" class="form-control" name="username" id="username" placeholder="输入用户名"
-                               required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                               >
+                        <%--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>--%>
                     </div>
                 </div>
                 <div class="form-group">
@@ -32,17 +34,17 @@
 
                     <div class="input-group col-sm-9">
                         <input type="password" class="form-control" name="password" id="password" placeholder="输入密码"
-                               required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                               >
+                        <%--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>--%>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="rePassword" class="col-sm-2 control-label">确认密码</label>
+                    <label for="confirmPassword" class="col-sm-2 control-label">确认密码</label>
 
                     <div class="input-group col-sm-9">
-                        <input type="password" class="form-control" id="rePassword" name="rePassword" placeholder="确认密码"
-                               required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="确认密码"
+                               >
+                        <%--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>--%>
                     </div>
                 </div>
                 <div class="form-group">
@@ -50,16 +52,16 @@
 
                     <div class="input-group col-sm-9">
                         <input type="text" class="form-control" id="realName" name="realName" placeholder="输入姓名"
-                               required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                               >
+                        <%--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>--%>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-2 control-label">邮箱地址</label>
 
                     <div class="input-group col-sm-9">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="输入邮箱" required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="输入邮箱" >
+                        <%--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>--%>
                     </div>
                 </div>
                 <div class="form-group">
@@ -67,16 +69,15 @@
 
                     <div class="input-group col-sm-9">
                         <input type="text" class="form-control" min="4" id="phoneNumber" name="phoneNumber" placeholder="输入电话号码"
-                               required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                               >
+                        <%--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>--%>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="userRole" class="col-sm-2 control-label">用户角色</label>
-
+                    <label for="roleText" class="col-sm-2 control-label">用户角色</label>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-danger" id="role">${roles[0].text}</button>
+                        <input type="text" class="btn btn-danger" name="roleText" id="roleText" value='${roles[0].text}'>
                         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="caret"></span>
                             <span class="sr-only" name="role">${roles[0].text}</span>
@@ -98,3 +99,4 @@
 </div>
 <script type="text/javascript" src="/js/cancel.js"></script>
 <script type="text/javascript" src="/js/updateDropdown.js"></script>
+<script type="text/javascript" src="/js/validator.js" ></script>

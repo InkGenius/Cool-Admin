@@ -10,15 +10,14 @@ $(document).ready(function($){
 
     $(".dropdown-menu li").on("click",function(){
         var selectedText = $(this).text();
-        var $button = $(this).parent().siblings("#role");
-        $button.text(selectedText);
+        var $input = $(this).parent().siblings("#roleText");
+        $input.val(selectedText);
     });
 
     //button 在表单提交时不会提交role的信息，要添加一个隐藏的input元素
-    $("form").on("submit",function(){
-        var $rolename = $(this).find("#role");
-        var $input = $("<input>").attr("type","hidden").attr("name","roleText").attr("value",$rolename.text());
-        $(this).append($input);
-    });
-
+    //$("form").on("submit",function(){
+    //    var $rolename = $(this).find("#role");
+    //    var $input = $("<input>").attr("type","hidden").attr("name","roleText").attr("value",$rolename.text());
+    //    $(this).append($input);
+    //});
 })($);

@@ -27,6 +27,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public User findUserByEmail(String email) {
+        return userDao.findUserByEmail(email);
+    }
+
+    @Override
     public boolean isValidateUser(String username, String password) {
         User user = userDao.findUserByUsername(username);
         if(user != null && user.getPassword().equals(password)){

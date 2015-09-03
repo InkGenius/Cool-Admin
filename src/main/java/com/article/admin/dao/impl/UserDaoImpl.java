@@ -28,6 +28,13 @@ public class UserDaoImpl extends BaseModelDaoImpl<User,Long> implements IUserDao
     }
 
     @Override
+    public User findUserByEmail(String email) {
+        String hsql = "FROM User as u WHERE u.email ='" + email + "'";
+
+        return findUniqueResultByHsql(hsql);
+    }
+
+    @Override
     public User findUserByUsername(String username) {
         String hsql = "FROM User as u WHERE u.username ='" + username + "'";
 

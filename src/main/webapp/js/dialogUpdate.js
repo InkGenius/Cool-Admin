@@ -2,6 +2,7 @@
  * Created by Administrator on 2015/9/1.
  */
 $(document).ready(function(){
+
     $(".userDialogUpdate").click(function(e){
         var id = "1";
 

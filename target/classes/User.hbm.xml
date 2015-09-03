@@ -20,7 +20,7 @@
                 <param name="enumClass">com.article.model.UserRole</param>
             </type>
         </property>
-        <property name="registerDate" type="timestamp" column="REGISTERDATE" not-null="true" />
+        <property name="registerDate" type="date" column="REGISTERDATE" not-null="true" />
 
     </class>
 </hibernate-mapping>
