@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="charisma-admin:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="charisma-admin.war">
-      <element id="artifact" artifact-name="charisma-admin:war exploded" />
-    </root>
-  </artifact>
-</component>

@@ -15,5 +15,19 @@
         <context:component-scan base-package="com.article.admin.service" />
 
         <tx:annotation-driven transaction-manager = "transactionManager" />
+        <mvc:annotation-driven/>
 
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=utf-8</value>
+                        <value>text/html;charset=utf-8</value>
+                        <value>text/json;charset=utf-8</value>
+                        <value>application/json;charset=utf-8</value>
+                    </list> </property>
+            </bean>
+        </property>
+    </bean>
 </beans>
