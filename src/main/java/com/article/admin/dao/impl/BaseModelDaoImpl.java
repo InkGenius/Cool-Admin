@@ -29,34 +29,29 @@ public class BaseModelDaoImpl<T extends Serializable, PK extends Serializable> e
         super.setSessionFactory(sessionFactory);
     }
 
-    @Override
     public boolean create(T t) {
         this.getHibernateTemplate().save(t);
 
         return true;    //TODO: If there need to update.
     }
 
-    @Override
     public boolean update(T t) {
         this.getHibernateTemplate().update(t);
 
         return true;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
     public boolean delete(T t) {
         this.getHibernateTemplate().delete(t);
 
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
     public boolean deleteById(PK id) {
         delete(findById(id));
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
     public T findById(PK id) {
         String hsql = "FROM User as u WHERE u.id =" + id;
         if (findUniqueResultByHsql(hsql) != null){
@@ -65,7 +60,6 @@ public class BaseModelDaoImpl<T extends Serializable, PK extends Serializable> e
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
     public List<T> findByHql(String hsql, Object[] paramters) {
         Query query = getSession().createQuery(hsql);
 
@@ -76,7 +70,6 @@ public class BaseModelDaoImpl<T extends Serializable, PK extends Serializable> e
         return query.list();  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
     public T findUniqueResultByHsql(String hsql) {
 
         Query query = getSession().createQuery(hsql);
@@ -84,14 +77,12 @@ public class BaseModelDaoImpl<T extends Serializable, PK extends Serializable> e
         return (T)query.uniqueResult();
     }
 
-    @Override
     public List<T> findAll() {
         String hql = "from " + getEntityClass().getSimpleName();
 
         return this.getHibernateTemplate().find(hql);
     }
 
-    @Override
     public Map<String, Object> convertObjectToMap(T t) {
         return mapper.convertValue(t,Map.class);
     }

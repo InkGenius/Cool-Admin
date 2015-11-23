@@ -9,9 +9,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="row">
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="6 new members." class="well top-block" href="/admin/userManage.html">
+        <a data-toggle="tooltip" title="6 new members." class="well top-block" href="/userManage.html/admin">
             <i class="glyphicon glyphicon-user blue"></i>
-
             <div>现有会员数</div>
             <div>${fn:length(users)}</div>
             <span class="notification">${fn:length(users)}</span>
@@ -20,10 +19,10 @@
 
     <div class="col-md-3 col-sm-3 col-xs-6">
         <a data-toggle="tooltip" title="4 new pro members." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-star green"></i>
+            <i class="glyphicon glyphicon-usd"></i>
 
-            <div>Pro Members</div>
-            <div>228</div>
+            <div>账户余额</div>
+            <div>498</div>
             <span class="notification green">4</span>
         </a>
     </div>

@@ -8,15 +8,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created with IntelliJ IDEA.
- * User: yifan
- * Date: 13-11-8
+ * User: daisong
+ * Date: 15-11-21
  * Time: 下午3:01
  * To change this template use File | Settings | File Templates.
  */
 @Repository
 public class UserDaoImpl extends BaseModelDaoImpl<User,Long> implements IUserDao{
 
-    @Override
     public boolean checkUser(String username, String password) {
         User user = findUserByUsername(username);
 
@@ -27,14 +26,12 @@ public class UserDaoImpl extends BaseModelDaoImpl<User,Long> implements IUserDao
         return false;
     }
 
-    @Override
     public User findUserByEmail(String email) {
         String hsql = "FROM User as u WHERE u.email ='" + email + "'";
 
         return findUniqueResultByHsql(hsql);
     }
 
-    @Override
     public User findUserByUsername(String username) {
         String hsql = "FROM User as u WHERE u.username ='" + username + "'";
 

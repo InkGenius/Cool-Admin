@@ -2,8 +2,8 @@ package com.article.model;
 
 /**
  * Created with IntelliJ IDEA.
- * User: yifan
- * Date: 13-11-8
+ * User: daisong
+ * Date: 15-11-22
  * Time: 下午8:52
  * To change this template use File | Settings | File Templates.
  */

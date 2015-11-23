@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: daisong
-  Date: 13-11-8
-  Time: 下午5:10
+  Date: 15-11-22
+  Time: 下午1:10
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,11 +10,10 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-
     <meta charset="utf-8">
-    <title>万能后台管理系统</title>
+    <title>CD学习小组管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="万能后台">
+    <meta name="description" content="CD学习小组">
     <meta name="author" content="daisong">
 
     <!-- The styles -->
@@ -49,12 +48,13 @@
 </head>
 
 <body>
+
 <div class="ch-container">
     <div class="row">
 
         <div class="row">
             <div class="col-md-12 center login-header">
-                <h2>欢迎进入通用后台管理系统.</h2>
+                <h2>欢迎进入CD学习小组管理系统.</h2>
             </div>
             <!--/span-->
         </div><!--/row-->
@@ -83,9 +83,10 @@
                         </div>
                         <div class="clearfix"></div>
 
-                        <p class="center col-md-5">
-                            <button type="submit" class="btn btn-primary">登 陆</button>
-                        </p>
+                        <div class="center col-md-5">
+                             <button type="submit" class="btn btn-primary">登 陆</button>
+                        </div>
+
                     </fieldset>
                 </form>
             </div>
@@ -94,6 +95,8 @@
     </div><!--/fluid-row-->
 
 </div><!--/.fluid-container-->
+
+
 
 <!-- external javascript -->
 
@@ -129,6 +132,11 @@
 <script src="/js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="/js/charisma.js"></script>
-
+<script type="text/javascript" src="/js/cancel.js"></script>
+<script type="text/javascript" src="/js/updateDropdown.js"></script>
+<script type="text/javascript" src="/js/validator.js" ></script>
+<script>
+//    $('#registerModal').modal('show');
+</script>
 </body>
 </html>

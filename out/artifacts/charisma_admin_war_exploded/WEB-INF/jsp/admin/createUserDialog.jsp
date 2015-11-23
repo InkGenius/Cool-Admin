@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: yifan
-  Date: 13-11-11
+  User: daisong
+  Date: 15-11-22
   Time: 下午2:24
   To change this template use File | Settings | File Templates.
 --%>
@@ -29,6 +29,7 @@
                         <%--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>--%>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="password" class="col-sm-2 control-label">密码</label>
 
