@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88c56428-59ae-4207-a3e1-a6b43d5aea8e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/jsp/admin/createUserDialog.jsp" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/jsp/admin/createUserDialog.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="charisma-admin.iws" />
@@ -935,7 +934,7 @@
       <option name="number" value="Default" />
       <updated>1448162064980</updated>
       <workItem from="1448162070954" duration="15583000" />
-      <workItem from="1448287404575" duration="5529000" />
+      <workItem from="1448287404575" duration="5579000" />
     </task>
     <task id="LOCAL-00001" summary="重新部署！">
       <created>1448165811955</created>
@@ -949,11 +948,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448293063042</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="界面修改，Account管理">
+      <created>1448293444669</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1448293444669</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21112000" />
+    <option name="totallyTimeSpent" value="21162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
