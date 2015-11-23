@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88c56428-59ae-4207-a3e1-a6b43d5aea8e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/article/model/Account.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/controller/AccountController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/AccountDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/IAccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/dao/impl/BaseModelDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/dao/impl/BaseModelDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/article/admin/dao/impl/BaseModelDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/article/admin/dao/impl/BaseModelDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/dao/impl/UserDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/dao/impl/UserDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/article/admin/dao/impl/UserDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/article/admin/dao/impl/UserDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/model/Article.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/model/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/BaseModelDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/BaseModelDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/model/Catalog.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/model/Catalog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/IArticleDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/IArticleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/ICatalogDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/ICatalogDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/IUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/IUserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/service/IUserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/service/IUserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/UserDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/UserDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/model/UserRole.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/model/UserRole.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/jsp/admin/createUserDialog.jsp" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/jsp/admin/createUserDialog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/createUserDialog.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/createUserDialog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/jsp/admin/dashboard.jsp" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/jsp/admin/dashboard.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/dashboard.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/dashboard.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/jsp/admin/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/jsp/admin/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/js/updateDropdown.js" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/js/updateDropdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/updateDropdown.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/updateDropdown.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="charisma-admin.iws" />
@@ -52,11 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="createUserDialog.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createUserDialog.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/createUserDialog.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56164384">
+            <state vertical-scroll-proportion="-9.84">
               <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.2897959">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,16 +98,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/ArticleDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -960,7 +935,7 @@
       <option name="number" value="Default" />
       <updated>1448162064980</updated>
       <workItem from="1448162070954" duration="15583000" />
-      <workItem from="1448287404575" duration="5155000" />
+      <workItem from="1448287404575" duration="5529000" />
     </task>
     <task id="LOCAL-00001" summary="重新部署！">
       <created>1448165811955</created>
@@ -968,11 +943,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448165811955</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="界面修改，Account管理">
+      <created>1448293063042</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1448293063042</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20738000" />
+    <option name="totallyTimeSpent" value="21112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -980,10 +961,10 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2264151" sideWeight="0.62737924" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5298742" sideWeight="0.69692534" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.061320756" sideWeight="0.26793557" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5298742" sideWeight="0.30307466" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27672955" sideWeight="0.39019033" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1217,14 +1198,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.32">
           <caret line="70" column="35" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.88">
-          <caret line="55" column="46" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1492,8 +1465,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/createUserDialog.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56164384">
+        <state vertical-scroll-proportion="-9.84">
           <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2897959">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
