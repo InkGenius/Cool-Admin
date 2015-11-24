@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88c56428-59ae-4207-a3e1-a6b43d5aea8e" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\workspace\GitHub\Cool-Admin\target\classes\com\article\admin\dao\IAccountService.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/model/Account.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/model/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/controller/AccountController.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/controller/AccountController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/AccountDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/AccountDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/service/impl/ArticleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/service/impl/ArticleServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/BaseModelDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/impl/BaseModelDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/service/IAccountService.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/service/IAccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/User.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/User.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/article/admin/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/service/impl/UserServiceImpl.java" />
+    <list default="true" id="88c56428-59ae-4207-a3e1-a6b43d5aea8e" name="Default" comment="完善Account功能">
+      <change type="DELETED" beforePath="D:\workspace\GitHub\Cool-Admin\out\artifacts\charisma_admin_war_exploded\WEB-INF\classes\com\article\admin\dao\IAccountService.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/model/Account.class" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/model/Account.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/article/model/Account.class" afterPath="$PROJECT_DIR$/target/classes/com/article/model/Account.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/controller/AccountController.class" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/controller/AccountController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/article/admin/controller/AccountController.class" afterPath="$PROJECT_DIR$/target/classes/com/article/admin/controller/AccountController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/dao/impl/AccountDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/dao/impl/AccountDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/article/admin/dao/impl/AccountDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/article/admin/dao/impl/AccountDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/service/impl/ArticleServiceImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/service/impl/ArticleServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/article/admin/service/impl/ArticleServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/article/admin/service/impl/ArticleServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/service/IAccountService.class" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/service/IAccountService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/article/admin/service/IAccountService.class" afterPath="$PROJECT_DIR$/target/classes/com/article/admin/service/IAccountService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/com/article/admin/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/article/admin/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/article/admin/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/User.hbm.xml" afterPath="$PROJECT_DIR$/out/artifacts/charisma_admin_war_exploded/WEB-INF/classes/User.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/User.hbm.xml" afterPath="$PROJECT_DIR$/target/classes/User.hbm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\workspace\GitHub\Cool-Admin\src\main\java\com\article\admin\dao\IAccountService.java" afterPath="$PROJECT_DIR$/src/main/java/com/article/admin/dao/IAccountDao.java" />
     </list>
     <ignored path="charisma-admin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1003,7 +1008,7 @@
       <updated>1448162064980</updated>
       <workItem from="1448162070954" duration="15583000" />
       <workItem from="1448287404575" duration="6855000" />
-      <workItem from="1448370558600" duration="3673000" />
+      <workItem from="1448370558600" duration="3860000" />
     </task>
     <task id="LOCAL-00001" summary="重新部署！">
       <created>1448165811955</created>
@@ -1047,11 +1052,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448294438499</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="完善Account功能">
+      <created>1448375877666</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1448375877666</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26111000" />
+    <option name="totallyTimeSpent" value="26298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -1101,7 +1112,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="重新部署！" />
     <MESSAGE value="界面修改，Account管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="界面修改，Account管理" />
+    <MESSAGE value="完善Account功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善Account功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
