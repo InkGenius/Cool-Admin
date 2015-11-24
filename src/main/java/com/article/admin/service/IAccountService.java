@@ -7,12 +7,13 @@ import com.article.model.Account;
  */
 public interface IAccountService {
 
-    public Account findAccountById();
+    public Account findAccountById(long id);
+
     public int getSum();
     public int getReminder();
     public int getCount();
 
-    public void consume(int amount);
-    public void submit(int amount,int people);
+    public boolean consume(int amount);
+    public boolean submit(int amount,int people);
 
 }

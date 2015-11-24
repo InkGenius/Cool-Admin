@@ -1,9 +1,12 @@
 package com.article.model;
 
+import java.io.Serializable;
+
 /**
  * Created by daisong on 2015/11/23.
  */
-public class Account {
+public class Account implements Serializable {
+
     private long id;
     private int sum;
     private int remainder;
