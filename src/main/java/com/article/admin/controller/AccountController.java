@@ -30,4 +30,12 @@ import java.util.List;
 @Controller
 public class AccountController {
 
+    @RequestMapping(value = "/admin/coo.html",method = RequestMethod.GET)
+    public ModelAndView kll(HttpSession session){
+        ModelAndView modelAndView = new ModelAndView();
+
+
+
+        return modelAndView;
+    }
 }

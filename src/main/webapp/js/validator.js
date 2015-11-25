@@ -17,16 +17,16 @@
                         min: 6,
                         max: 30,
                         message: '用户名必须多于6个，少于30 个字符！'
-                    },
+                    }
                     //regexp: {
                     //    regexp: /^[a-zA-Z0-9_\.]+$/,
                     //    message: '用户名只能由字母，数字，下划线组成！'
                     //},
-                    remote:{
-                        url: '/admin/ajaxValidateUsername.html',
-                        message: '用户名已存在！',
-                        type: 'GET'
-                    }
+                    //remote:{
+                    //    url: '/admin/ajaxValidateUsername.html',
+                    //    message: '用户名已存在！',
+                    //    type: 'GET'
+                    //}
                 }
             },
             email: {
@@ -36,12 +36,12 @@
                     },
                     emailAddress: {
                         message: '邮箱格式不正确！'
-                    },
-                    remote:{
-                        url: '/admin/ajaxValidateEmail.html.html',
-                        message: '邮箱已注册！',
-                        type: 'POST'
                     }
+                    //remote:{
+                    //    url: '/admin/ajaxValidateEmail.html.html',
+                    //    message: '邮箱已注册！',
+                    //    type: 'POST'
+                    //}
 
                 }
             },

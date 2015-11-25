@@ -1,6 +1,7 @@
 package com.article.admin.controller;
 
 import com.article.admin.dao.IUserDao;
+import com.article.admin.service.IAccountService;
 import com.article.admin.service.IUserService;
 import com.article.model.StepBean;
 import com.article.model.User;
@@ -67,7 +68,9 @@ public class UserController {
         ModelMap modelMap = modelAndView.getModelMap();
 
         List<User> users = userService.findAllUsers();
+        int remainder = accountService.getReminder();
         modelMap.put(USERS, users);
+        modelMap.put(REMAINDER,remainder);
 
         List<String> contentPages = new ArrayList<String>();
         contentPages.add(dashboard + JSPSUFFIX);
@@ -202,6 +205,7 @@ public class UserController {
     public static final String CONTENTPAGE = "contentpages";
     public static final String ROLE = "roles";
     public static final String USERS = "users";
+    public static final String REMAINDER = "remainder";
     public static final String USER= "user";
     public static final String USERNAME = "username";
     public static final String ERRORMSG = "error";
@@ -232,4 +236,6 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+    @Autowired
+    private IAccountService accountService;
 }

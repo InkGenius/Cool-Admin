@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
-  User: yifan
-  Date: 13-11-12
+  User: daisong
+  Date: 15-11-22
   Time: 上午9:02
   To change this template use File | Settings | File Templates.
 --%>
@@ -22,8 +22,8 @@
             <i class="glyphicon glyphicon-usd"></i>
 
             <div>账户余额</div>
-            <div>498</div>
-            <span class="notification green">4</span>
+            <div>${remaminder}</div>
+            <span class="notification green">${remaminder}</span>
         </a>
     </div>
 
