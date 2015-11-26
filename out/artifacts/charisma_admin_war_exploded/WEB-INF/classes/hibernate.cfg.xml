@@ -15,6 +15,7 @@
 
 
 		<mapping resource="/User.hbm.xml" />
+		<mapping resource="/Account.hbm.xml" />
         <!--<mapping resource="Article.hbm.xml" />-->
         <!--<mapping resource="Catalog.hbm.xml" />-->
 	</session-factory>

@@ -17,7 +17,7 @@
         <property name="realName" type="string" column="REALNAME" />
         <property name="email" type="string" column="EMAIL" />
         <property name="phoneNumber" type="string" column="PHONENUMBER" />
-a
+
         <property name="role" not-null="true">
             <type name="org.hibernate.type.EnumType">
                 <param name="enumClass">com.article.model.UserRole</param>

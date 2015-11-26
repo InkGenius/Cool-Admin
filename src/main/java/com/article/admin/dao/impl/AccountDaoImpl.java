@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 /**
  * Created by Administrator on 2015/11/23.
@@ -26,10 +27,8 @@ public class AccountDaoImpl extends HibernateDaoSupport implements IAccountDao {
 
     public Account findAccountById(Long id) {
         String hsql = "FROM Account as a WHERE a.id =" + id;
-        if (findUniqueResultByHsql(hsql) != null){
-            return this.getHibernateTemplate().load(getEntityClass(),id);
-        }
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        Account res = (Account)getSession().createQuery(hsql).list().get(0);
+        return res;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public boolean update(Account account) {
@@ -45,14 +44,6 @@ public class AccountDaoImpl extends HibernateDaoSupport implements IAccountDao {
         return (Account)query.uniqueResult();
     }
 
-    @SuppressWarnings({ "unused", "unchecked" })
-    private Class<Account> getEntityClass(){
-        if(entityClass==null){
-            entityClass = (Class<Account>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-        }
-        return entityClass;
-
-    }
     private ObjectMapper mapper = new ObjectMapper();
     private Class<Account> entityClass;
 }
