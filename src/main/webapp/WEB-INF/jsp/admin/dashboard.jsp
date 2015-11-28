@@ -18,32 +18,66 @@
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="" class="well top-block" href="#">
+        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="expense.html">
             <i class="glyphicon glyphicon-usd"></i>
-
-            <div>账户余额</div>
-            <div>${remainder}</div>
-            <span class="notification green">${remainder}</span>
+            <div>总额</div>
+            <div>${sum}</div>
+            <span class="notification green">${sum}</span>
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="$34 new sales." class="well top-block" href="#">
+        <a data-toggle="tooltip" title="" class="well top-block" href="#">
             <i class="glyphicon glyphicon-shopping-cart yellow"></i>
 
             <div>今日消费</div>
-            <div>￥70</div>
-            <span class="notification yellow">$34</span>
+            <div>${today}</div>
+            <span class="notification yellow">${today}</span>
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="12 new messages." class="well top-block" href="#">
+        <a data-toggle="tooltip" title="" class="well top-block" href="#">
             <i class="glyphicon glyphicon-envelope red"></i>
+            <div>余额</div>
+            <div>${remainder}</div>
+            <span class="notification red">${remainder}</span>
+        </a>
+    </div>
 
-            <div>今日菜谱</div>
-            <div>25</div>
-            <span class="notification red">12</span>
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="" class="well top-block" href="#">
+            <i class="glyphicon glyphicon-envelope red"></i>
+            <div>余额</div>
+            <div>${remainder}</div>
+            <span class="notification red">${remainder}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="" class="well top-block" href="#">
+            <i class="glyphicon glyphicon-envelope red"></i>
+            <div>余额</div>
+            <div>${remainder}</div>
+            <span class="notification red">${remainder}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="" class="well top-block" href="#">
+            <i class="glyphicon glyphicon-envelope red"></i>
+            <div>余额</div>
+            <div>${remainder}</div>
+            <span class="notification red">${remainder}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="" class="well top-block" href="#">
+            <i class="glyphicon glyphicon-envelope red"></i>
+            <div>余额</div>
+            <div>${remainder}</div>
+            <span class="notification red">${remainder}</span>
         </a>
     </div>
 </div>

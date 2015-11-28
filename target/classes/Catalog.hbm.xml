@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.article.model.Article">
+    <class name="com.order.model.Article">
         <id name="id" type="long" column="ArticleId">
             <generator class="native"/>
         </id>

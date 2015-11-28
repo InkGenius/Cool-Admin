@@ -4,7 +4,7 @@
 
 <hibernate-mapping>
 
-    <class name="com.article.model.User" table="User">
+    <class name="com.order.model.User" table="User">
 
 
         <id name="id" type="long" column="UserId">
@@ -20,7 +20,7 @@
 
         <property name="role" not-null="true">
             <type name="org.hibernate.type.EnumType">
-                <param name="enumClass">com.article.model.UserRole</param>
+                <param name="enumClass">com.order.model.UserRole</param>
             </type>
         </property>
         <property name="registerDate" type="date" column="REGISTERDATE" not-null="true" />

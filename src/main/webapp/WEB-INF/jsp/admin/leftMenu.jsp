@@ -13,8 +13,7 @@
                 </li>
                 <li><a class="ajax-link" href="/admin/userManage.html"><i class="glyphicon glyphicon-user"></i><span> 用户管理</span></a>
                 </li>
-                <li><a class="ajax-link" href="form.html"><i
-                        class="glyphicon glyphicon-edit"></i><span> Forms</span></a></li>
+                <li><a class="ajax-link" href="/admin/expense.html"><i class="glyphicon glyphicon-edit"></i><span> 记账</span></a></li>
                 <li><a class="ajax-link" href="chart.html"><i class="glyphicon glyphicon-list-alt"></i><span> Charts</span></a>
                 </li>
                 <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
