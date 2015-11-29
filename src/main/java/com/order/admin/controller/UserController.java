@@ -1,6 +1,7 @@
 package com.order.admin.controller;
 
 import com.order.admin.service.IAccountService;
+import com.order.admin.service.IDishService;
 import com.order.admin.service.IUserService;
 import com.order.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,14 +65,17 @@ public class UserController {
 
         List<User> users = userService.findAllUsers();
         Account acc = accountService.findAccountById(1);
+        List<Dish> dishes = dishService.findAllDishes();
 
         modelMap.put(USERS, users);
         modelMap.put(REMAINDER,acc.getRemainder());
-        modelMap.put(SUM,acc.getSum());
+        modelMap.put(SUM, acc.getSum());
+        modelMap.put(DISHES, dishes);
 
         List<String> contentPages = new ArrayList<String>();
         contentPages.add(dashboard + JSPSUFFIX);
         contentPages.add(userManage + JSPSUFFIX);
+        contentPages.add(dishManage + JSPSUFFIX);
         modelMap.put(CONTENTPAGE,contentPages);
 
         List<StepBean> emptyStepBean = Collections.emptyList();
@@ -221,6 +225,7 @@ public class UserController {
     public static final String REMAINDER = "remainder";
     public static final String SUM = "sum";
     public static final String USER= "user";
+    public static final String DISHES= "dishes";
     public static final String USERNAME = "username";
     public static final String ERRORMSG = "error";
     public static final String STEPS = "steps";
@@ -250,8 +255,13 @@ public class UserController {
     @Value("/admin/index")
     private String index;
 
+    @Value("dishManage")
+    private String dishManage;
+
     @Autowired
     private IUserService userService;
     @Autowired
     private IAccountService accountService;
+    @Autowired
+    private IDishService dishService;
 }

@@ -43,7 +43,6 @@ public class BaseModelDaoImpl<T extends Serializable, PK extends Serializable> e
 
     public boolean delete(T t) {
         this.getHibernateTemplate().delete(t);
-
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
