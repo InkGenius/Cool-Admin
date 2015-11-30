@@ -67,10 +67,21 @@ public class UserController {
         Account acc = accountService.findAccountById(1);
         List<Dish> dishes = dishService.findAllDishes();
 
+        List<Catagory> catagorys = dishService.findCatagorys();
+        Map<String,List<Dish>> map = new HashMap<String, List<Dish>>();
+
+        for (Catagory cata : catagorys) {
+            List<Dish> dishs = dishService.findAllDishesOfType(cata.getType());
+            if (dishs.size() > 0) {
+                map.put(cata.getName(), dishs);
+            }
+        }
+
         modelMap.put(USERS, users);
         modelMap.put(REMAINDER,acc.getRemainder());
         modelMap.put(SUM, acc.getSum());
         modelMap.put(DISHES, dishes);
+        modelMap.put(CATAGORYS, map);
 
         List<String> contentPages = new ArrayList<String>();
         contentPages.add(dashboard + JSPSUFFIX);
@@ -109,25 +120,25 @@ public class UserController {
         return index();
     }
 
-    @RequestMapping(value = "/admin/ajaxValidateUsername.html",method = RequestMethod.GET)
-    public @ResponseBody Test ajaxValidateUsername(String username){
-        User currentUser = userService.findUserByUsername(username);
+    //@RequestMapping(value = "/admin/ajaxValidateUsername.html",method = RequestMethod.GET)
+    //public @ResponseBody Test ajaxValidateUsername(String username){
+     //   User currentUser = userService.findUserByUsername(username);
 //        boolean valid = false;
-        Test test = new Test();
-        if (currentUser == null){
+        //Test test = new Test();
+       // if (currentUser == null){
 //            valid = true;
-            test.setValid(true);
+           // test.setValid(true);
 //            System.out.println(valid);
-        }else {
-            test.setValid(false);
-        }
+        //}else {
+          //  test.setValid(false);
+        //}
 //        Map<String,Object> map = new HashMap<String, Object>();
 //        map.put("valid", valid);
 //        System.out.println(valid);
 //        String json = "[{\"valid\": true}]";
 //        System.out.println(json);
-        return test;
-    }
+      //  return test;
+  //  }
 
     @RequestMapping(value = "/admin/ajaxValidateEmail.html",method = RequestMethod.POST)
     public @ResponseBody boolean ajaxValidateEmail(String email){
@@ -229,6 +240,7 @@ public class UserController {
     public static final String USERNAME = "username";
     public static final String ERRORMSG = "error";
     public static final String STEPS = "steps";
+    public static final String CATAGORYS = "catagorys";
     public static final String JSPSUFFIX = ".jsp";
 
     @Value("dashboard")

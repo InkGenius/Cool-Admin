@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.order.model.Account" table="Account">
+
+
+        <id name="id" type="long" column="ACCOUNTID">
+            <meta attribute="scope-set">protected</meta>
+            <generator class="native" />
+        </id>
+
+        <property name="sum" type="int" column="SUM" not-null="true" />
+        <property name="remainder" type="int" column="REMAINNDER" not-null="true" />
+        <property name="count" type="int" column="COUNT" />
+
+    </class>
+</hibernate-mapping>

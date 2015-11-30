@@ -20,6 +20,6 @@
 		<mapping resource="/Account.hbm.xml" />
         <mapping resource="/Consume.hbm.xml" />
 		<mapping resource="/Dish.hbm.xml" />
-        <!--<mapping resource="Catalog.hbm.xml" />-->
+        <mapping resource="/Catagory.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>
