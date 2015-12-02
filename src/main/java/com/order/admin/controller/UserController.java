@@ -66,6 +66,7 @@ public class UserController {
         List<User> users = userService.findAllUsers();
         Account acc = accountService.findAccountById(1);
         List<Dish> dishes = dishService.findAllDishes();
+        int todayConsume = accountService.getTodayConsume();
 
         List<Catagory> catagorys = dishService.findCatagorys();
         Map<String,List<Dish>> map = new HashMap<String, List<Dish>>();
@@ -82,6 +83,7 @@ public class UserController {
         modelMap.put(SUM, acc.getSum());
         modelMap.put(DISHES, dishes);
         modelMap.put(CATAGORYS, map);
+        modelMap.put(TODAYCONSUME, todayConsume);
 
         List<String> contentPages = new ArrayList<String>();
         contentPages.add(dashboard + JSPSUFFIX);
@@ -171,7 +173,7 @@ public class UserController {
     @RequestMapping(value = "/admin/expense.html", method = RequestMethod.POST)
     public ModelAndView expense(String expense,String location,String dishOne, String dishTwo,String dishThree,String dishFour,String dishFive){
         Date date = new Date();
-        System.out.println("test:"+expense + " "+ dishOne);
+        //System.out.println("test:"+expense + " "+ dishOne);
         Consume consume = new Consume(Integer.parseInt(expense),date,location,dishOne,dishTwo,dishThree,dishFour,dishFive);
         accountService.consume(consume);
         return index();
@@ -219,6 +221,38 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/admin/dishesManage.html",method = RequestMethod.GET)
+    public ModelAndView manageDishes(){
+
+        ModelAndView modelAndView = new ModelAndView(index);
+        ModelMap modelMap = modelAndView.getModelMap();
+
+        List<String> contentPages = new ArrayList<String>();
+        contentPages.add(dishManage+JSPSUFFIX);
+        modelMap.put(CONTENTPAGE,contentPages);
+
+        List<StepBean> steps = new ArrayList<StepBean>();
+        steps.add(StepBean.DishesManage);
+        modelMap.put(STEPS,steps);
+
+//        List<Dish> dishes = dishService.findAllDishes();
+//        modelMap.put(DISHES, dishes);
+
+        List<Catagory> catagorys = dishService.findCatagorys();
+
+        Map<String,List<Dish>> map = new HashMap<String, List<Dish>>();
+
+        for (Catagory cata : catagorys) {
+            List<Dish> dishs = dishService.findAllDishesOfType(cata.getType());
+            if (dishs.size() > 0) {
+                map.put(cata.getName(), dishs);
+            }
+        }
+        modelMap.put(CATAGORYS, map);
+
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/admin/logout.html")
     public String logout(HttpSession session){
         session.removeAttribute(USERNAME);
@@ -242,6 +276,7 @@ public class UserController {
     public static final String STEPS = "steps";
     public static final String CATAGORYS = "catagorys";
     public static final String JSPSUFFIX = ".jsp";
+    public static final String TODAYCONSUME = "todayConsume";
 
     @Value("dashboard")
     private String dashboard;

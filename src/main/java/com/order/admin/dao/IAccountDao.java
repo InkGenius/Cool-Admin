@@ -8,9 +8,9 @@ import com.order.model.Consume;
  */
 public interface IAccountDao {
 
-    public Account findAccountById(Long id);
+     Account findAccountById(Long id);
+     Consume findAccountByDate();
+     boolean update(Account account);
+     boolean create(Consume consume);
 
-    public boolean update(Account account);
-
-    public boolean create(Consume consume);
 }

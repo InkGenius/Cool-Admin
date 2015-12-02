@@ -14,7 +14,7 @@
         <div class="box-inner">
 
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-th"></i> 菜谱</h2>
+                <h2><i class="glyphicon glyphicon-th"></i>菜谱</h2>
             </div>
             <div class="row">
                 <c:forEach var="item" items="${catagorys}">

@@ -13,12 +13,12 @@
                 </li>
                 <li><a class="ajax-link" href="/admin/userManage.html"><i class="glyphicon glyphicon-user"></i><span> 用户管理</span></a>
                 </li>
-                <li><a class="ajax-link" href="/admin/expense.html"><i class="glyphicon glyphicon-edit"></i><span> 记账</span></a></li>
-                <li><a class="ajax-link" href="chart.html"><i class="glyphicon glyphicon-list-alt"></i><span> Charts</span></a>
+                <li><a class="ajax-link" href="/admin/dishesManage.html"><i class="glyphicon glyphicon-edit"></i><span> 菜谱</span></a></li>
+                <li><a class="ajax-link" href="chart.html"><i class="glyphicon glyphicon-list-alt"></i><span> 点菜</span></a>
                 </li>
-                <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
+                <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> 评价</span></a>
                 </li>
-                <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Gallery</span></a>
+                <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> 菜谱</span></a>
                 </li>
                 <li class="nav-header hidden-md">Sample Section</li>
                 <li><a class="ajax-link" href="table.html"><i

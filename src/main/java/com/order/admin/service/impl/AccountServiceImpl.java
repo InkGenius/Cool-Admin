@@ -7,6 +7,8 @@ import com.order.model.Consume;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * Created by daisong on 2015/11/24.
  */
@@ -50,5 +52,9 @@ public class AccountServiceImpl implements IAccountService{
         account.setCount(account.getCount() + 1);
         account.setSum(account.getSum() + amount * people);
         return true;
+    }
+
+    public int getTodayConsume() {
+        return accountDao.findAccountByDate().getSpend();
     }
 }
