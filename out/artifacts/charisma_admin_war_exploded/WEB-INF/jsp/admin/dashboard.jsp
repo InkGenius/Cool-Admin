@@ -47,14 +47,14 @@
 
     <div class="col-md-3 col-sm-3 col-xs-6">
         <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="expense.html">
-            <div><h4>记账</h4></div>
+            <div><h4>消费</h4></div>
             <div>&nbsp;</div>
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="expense.html">
-            <div><h4>点菜</h4></div>
+        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="append.html">
+            <div><h4>充值</h4></div>
             <div>&nbsp;</div>
         </a>
     </div>

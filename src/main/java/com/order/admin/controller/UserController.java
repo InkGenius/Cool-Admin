@@ -179,6 +179,20 @@ public class UserController {
         return index();
     }
 
+    @RequestMapping(value = "/admin/append.html", method = RequestMethod.GET)
+    public ModelAndView append(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName(append);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/admin/append.html", method = RequestMethod.POST)
+    public ModelAndView append(String append){
+        Date date = new Date();
+        accountService.append(Integer.parseInt(append));
+        return index();
+    }
+
     @RequestMapping(value = "/admin/addUser.html", method = RequestMethod.GET)
     public ModelAndView addUser(){
         ModelAndView modelAndView = new ModelAndView();
@@ -290,6 +304,8 @@ public class UserController {
     @Value("/admin/expense")
     private String expense;
 
+    @Value("/admin/append")
+    private String append;
     @Value("/admin/createUserDialog")
     private String createUser;
 

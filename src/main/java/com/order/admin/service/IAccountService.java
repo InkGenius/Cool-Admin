@@ -17,7 +17,7 @@ import java.util.Date;
      int getCount();
 
      boolean consume(Consume consume);
-     boolean submit(int amount,int people);
+     boolean append(int amount);
 
      int getTodayConsume();
 

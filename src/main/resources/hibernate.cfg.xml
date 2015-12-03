@@ -21,5 +21,7 @@
         <mapping resource="/Consume.hbm.xml" />
 		<mapping resource="/Dish.hbm.xml" />
         <mapping resource="/Catagory.hbm.xml" />
+		<mapping resource="/Append.hbm.xml" />
+
 	</session-factory>
 </hibernate-configuration>

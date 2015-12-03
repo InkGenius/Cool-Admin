@@ -2,6 +2,7 @@ package com.order.admin.dao.impl;
 
 import com.order.admin.dao.IAccountDao;
 import com.order.model.Account;
+import com.order.model.Append;
 import com.order.model.Consume;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.hibernate.Query;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -37,8 +39,12 @@ public class AccountDaoImpl extends HibernateDaoSupport implements IAccountDao {
         String dateStr = "\'"+ df1.format(date)+"\'";
 
         String hql = "from Consume as a WHERE a.date =" + dateStr;
-        System.out.println(df1.format(date));
-        return (Consume)getSession().createQuery(hql).list().get(0);
+
+        List consumes = getSession().createQuery(hql).list();
+        if(consumes.size() > 0){
+            return (Consume)consumes.get(0);
+        }
+        return null;
     }
 
     public boolean update(Account account) {
@@ -48,6 +54,15 @@ public class AccountDaoImpl extends HibernateDaoSupport implements IAccountDao {
     public boolean create(Consume consume) {
 
         this.getHibernateTemplate().save(consume);
+        return true;
+    }
+
+    public boolean save(Append append) {
+        if (append != null && append.getDate() == null){
+            Date date = new Date();
+            append.setDate(date);
+        }
+        this.getHibernateTemplate().save(append);
         return true;
     }
 
