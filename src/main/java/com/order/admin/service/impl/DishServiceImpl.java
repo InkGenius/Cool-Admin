@@ -4,6 +4,7 @@ import com.order.admin.dao.IDishDao;
 import com.order.admin.service.IDishService;
 import com.order.model.Catagory;
 import com.order.model.Dish;
+import com.order.model.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -82,4 +83,9 @@ public class DishServiceImpl implements IDishService {
     public List<Catagory> findCatagorys() {
         return dishDao.findCatagorys();
     }
+
+    public List<Restaurant> findAllRes() {
+        return dishDao.findAllRes();
+    }
+
 }

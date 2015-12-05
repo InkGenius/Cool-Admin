@@ -31,13 +31,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="location" class="col-sm-2 control-label">地点</label>
-
-                    <div class="input-group col-sm-9">
-                        <input type="text" class="form-control" name="location" id="location" placeholder="输入地点"
-                               >
-                        <%--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>--%>
+                    <label for="location" class="col-sm-2 control-label">商家</label>
+                    <div class="controls">
+                        <select id="location" name="location" id="location" data-rel="chosen">
+                            <c:forEach items="${restaurant}" var="res">
+                                <option>${res.name}</option>
+                            </c:forEach>
+                        </select>
                     </div>
+                    <%--<div class="input-group hide col-sm-9">--%>
+                        <%--<input type="text" class="form-control" name="location" id="location" placeholder="输入地点">--%>
+                        <%--&lt;%&ndash;<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>&ndash;%&gt;--%>
+                    <%--</div>--%>
                 </div>
                 <div class="form-group">
                     <label for="dishOne" class="col-sm-2 control-label">第一道菜</label>

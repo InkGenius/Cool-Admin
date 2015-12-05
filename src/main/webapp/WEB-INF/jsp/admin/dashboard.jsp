@@ -9,7 +9,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="row">
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="" class="well top-block" href="/userManage.html/admin">
+        <a data-toggle="tooltip" title="" class="well top-block" href="#">
             <i class="glyphicon glyphicon-user blue"></i>
             <div>现有会员数</div>
             <div>${fn:length(users)}</div>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="expense.html">
+        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#">
             <i class="glyphicon glyphicon-usd"></i>
             <div>总额</div>
             <div>${sum}</div>
@@ -46,28 +46,28 @@
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="expense.html">
+        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="/admin/expense.html">
             <div><h4>消费</h4></div>
             <div>&nbsp;</div>
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="append.html">
+        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="/admin/append.html">
             <div><h4>充值</h4></div>
             <div>&nbsp;</div>
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="expense.html">
+        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="/admin/expense.html">
             <div><h4>评价</h4></div>
             <div>&nbsp;</div>
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="expense.html">
+        <a data-toggle="tooltip" title="" class="well top-block userDialogUpdate" href="#" data-target="/admin/expense.html">
             <div><h4>菜谱</h4></div>
             <div>&nbsp;</div>
         </a>

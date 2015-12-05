@@ -22,6 +22,7 @@
 		<mapping resource="/Dish.hbm.xml" />
         <mapping resource="/Catagory.hbm.xml" />
 		<mapping resource="/Append.hbm.xml" />
+		<mapping resource="/Restaurant.hbm.xml" />
 
 	</session-factory>
 </hibernate-configuration>

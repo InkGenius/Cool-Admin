@@ -2,6 +2,7 @@ package com.order.admin.dao;
 
 import com.order.model.Catagory;
 import com.order.model.Dish;
+import com.order.model.Restaurant;
 
 import java.util.List;
 
@@ -33,5 +34,6 @@ import java.util.List;
     List<Dish> findAllDishes();
     List<Dish> findAllDishesOfRes(String res);
     List<Dish> findAllDishesOfType(int type);
-   List<Catagory> findCatagorys();
+    List<Catagory> findCatagorys();
+    List<Restaurant> findAllRes();
  }

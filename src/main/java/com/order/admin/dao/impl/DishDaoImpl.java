@@ -5,6 +5,7 @@ import com.order.admin.dao.IDishDao;
 import com.order.model.Account;
 import com.order.model.Catagory;
 import com.order.model.Dish;
+import com.order.model.Restaurant;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -109,6 +110,11 @@ public class DishDaoImpl extends HibernateDaoSupport implements IDishDao{
 
     public List<Catagory> findCatagorys() {
         String hql = "from Catagory";
+        return this.getHibernateTemplate().find(hql);
+    }
+
+    public List<Restaurant> findAllRes() {
+        String hql = "from Restaurant";
         return this.getHibernateTemplate().find(hql);
     }
 }

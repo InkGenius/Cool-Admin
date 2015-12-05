@@ -78,6 +78,7 @@ public class UserController {
             }
         }
 
+
         modelMap.put(USERS, users);
         modelMap.put(REMAINDER,acc.getRemainder());
         modelMap.put(SUM, acc.getSum());
@@ -118,7 +119,6 @@ public class UserController {
         user.setEmail(email);
         user.setRole(roleText);
         userService.updateUser(user);
-
         return index();
     }
 
@@ -166,6 +166,9 @@ public class UserController {
     @RequestMapping(value = "/admin/expense.html", method = RequestMethod.GET)
     public ModelAndView expense(){
         ModelAndView modelAndView = new ModelAndView();
+        List<Restaurant> resList = dishService.findAllRes();
+        ModelMap modelMap = modelAndView.getModelMap();
+        modelMap.put(RESTAURANT, resList);
         modelAndView.setViewName(expense);
         return modelAndView;
     }
@@ -199,7 +202,6 @@ public class UserController {
         ModelMap modelMap = modelAndView.getModelMap();
         modelMap.put(ROLE, UserRole.values());
         modelAndView.setViewName(createUser);
-
         return modelAndView;
     }
 
@@ -277,7 +279,6 @@ public class UserController {
         return userService.isValidateUser(username, password);
     }
 
-
     public static final String CONTENTPAGE = "contentpages";
     public static final String ROLE = "roles";
     public static final String USERS = "users";
@@ -291,6 +292,7 @@ public class UserController {
     public static final String CATAGORYS = "catagorys";
     public static final String JSPSUFFIX = ".jsp";
     public static final String TODAYCONSUME = "todayConsume";
+    public static final String RESTAURANT  = "restaurant";
 
     @Value("dashboard")
     private String dashboard;

@@ -1,7 +1,10 @@
 package com.order.admin.service;
 
+import antlr.LexerSharedInputState;
 import com.order.model.Catagory;
 import com.order.model.Dish;
+import com.order.model.Restaurant;
+
 import java.util.List;
 
 /**
@@ -33,4 +36,5 @@ import java.util.List;
     List<Dish> findAllDishes();
     List<Dish> findAllDishesOfRes(String res);
     List<Catagory> findCatagorys();
+    List<Restaurant> findAllRes();
 }
