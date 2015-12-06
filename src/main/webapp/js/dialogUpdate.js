@@ -24,24 +24,24 @@ $(document).ready(function(){
         });
     });
 
+    $(".order").click(function(){
 
-    $(".").click(function(e){
-        var id = "1";
+        var dishes = $("input[name='checkbox']:checkbox").map(function(){
+            if($(this).is(':checked')){
+                return $(this).val();
+            }
+        }).get();
 
-        if($(this).attr("data-value")){
-            id = $(this).attr("data-value");
-        }
-
+        var riches = $("#riches  option:selected").text();
         var targetUrl = $(this).attr("data-target");
         $.ajax({
             url: targetUrl,
-            method:'get',
-            data: "id="+id,
+            method:'post',
+            traditional: true,
+            data: {"dishes":dishes,"riches":riches},
             dataType:'html',
             success:function(data){
-                e.preventDefault();
-                $("#myModal").html(data);
-                $('#myModal').modal('show');
+                $(".consumption").html(data);
             }
         });
     });

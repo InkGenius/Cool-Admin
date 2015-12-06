@@ -4,6 +4,7 @@ import com.order.admin.dao.IAccountDao;
 import com.order.model.Account;
 import com.order.model.Append;
 import com.order.model.Consume;
+import com.order.model.Expend;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -54,6 +55,14 @@ public class AccountDaoImpl extends HibernateDaoSupport implements IAccountDao {
     public boolean create(Consume consume) {
 
         this.getHibernateTemplate().save(consume);
+        return true;
+    }
+
+    public boolean saveExpend(Expend expend) {
+        if(expend != null ){
+            System.out.println(expend.getMenu());
+        }
+        this.getHibernateTemplate().save(expend);
         return true;
     }
 

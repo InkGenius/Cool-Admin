@@ -11,7 +11,6 @@ import com.order.model.User;
 public interface IUserDao extends IBaseModelDao<User,Long>{
     /**
      * Check if the user is system user.
-     *
      * @param username
      * @param password
      * @return

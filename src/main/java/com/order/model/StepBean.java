@@ -11,8 +11,7 @@ public enum  StepBean {
 
     UserManage("用户管理","/admin/userManage.html"),
     DishesManage("菜单管理","/admin/dishesManage.html"),
-    CatalogManage("目录管理","/admin/catalogManage.html"),
-    ArticleManage("文章管理","/admin/articleManage.html");
+    Consumption("今日消费","/admin/dishSelect.html");
 
     StepBean(String text,String url){
         this.text = text;

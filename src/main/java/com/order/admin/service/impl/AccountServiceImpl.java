@@ -5,6 +5,7 @@ import com.order.admin.service.IAccountService;
 import com.order.model.Account;
 import com.order.model.Append;
 import com.order.model.Consume;
+import com.order.model.Expend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,9 +48,18 @@ public class AccountServiceImpl implements IAccountService{
         return true;
     }
 
+    public boolean expend(Expend expend) {
+        Account account = findAccountById(1);
+        account.setRemainder(account.getRemainder() - expend.getAmount());
+        accountDao.update(account);
+        accountDao.saveExpend(expend);
+        return true;
+    }
+
     public boolean append(int amount) {
         Account account = findAccountById(1);
         account.setRemainder(account.getRemainder() + amount);
+        System.out.println("”‡∂Ó£∫"+account.getRemainder());
         account.setCount(account.getCount() + 1);
         account.setSum(account.getSum() + amount);
         accountDao.update(account);

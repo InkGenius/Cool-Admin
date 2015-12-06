@@ -2,6 +2,7 @@ package com.order.admin.controller;
 
 import com.order.admin.service.IAccountService;
 import com.order.admin.service.IDishService;
+import com.order.admin.service.IExpendService;
 import com.order.admin.service.IUserService;
 import com.order.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,19 +14,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
  * User: daisong
- * Date: 13-11-8
+ * Date: 15-11-22
  * Time: 下午1:31
  * To change this template use File | Settings | File Templates.
 */
 @Controller
 public class UserController {
-
 
     @RequestMapping(value = "/admin/login.html",method = RequestMethod.GET)
     public ModelAndView login(HttpSession session){
@@ -224,7 +226,9 @@ public class UserController {
         ModelMap modelMap = modelAndView.getModelMap();
 
         List<String> contentPages = new ArrayList<String>();
+
         contentPages.add(userManage+JSPSUFFIX);
+
         modelMap.put(CONTENTPAGE,contentPages);
 
         List<StepBean> steps = new ArrayList<StepBean>();
@@ -269,6 +273,70 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/admin/dishSelect.html",method = RequestMethod.GET)
+    public ModelAndView selectDishes(){
+
+
+        ModelAndView modelAndView = new ModelAndView(index);
+        ModelMap modelMap = modelAndView.getModelMap();
+
+        List<String> contentPages = new ArrayList<String>();
+        contentPages.add(dishSelect+JSPSUFFIX);
+        modelMap.put(CONTENTPAGE,contentPages);
+
+        List<StepBean> steps = new ArrayList<StepBean>();
+        steps.add(StepBean.DishesManage);
+        modelMap.put(STEPS,steps);
+
+        List<Catagory> catagorys = dishService.findCatagorys();
+
+        Map<String,List<Dish>> map = new HashMap<String, List<Dish>>();
+
+        for (Catagory cata : catagorys) {
+            List<Dish> dishs = dishService.findAllDishesOfType(cata.getType());
+            if (dishs.size() > 0) {
+                map.put(cata.getName(), dishs);
+            }
+        }
+        modelMap.put(CATAGORYS, map);
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/admin/dishSelect.html",method = RequestMethod.POST)
+    public @ResponseBody ModelAndView selectDishes(HttpServletRequest req, HttpServletResponse resp){
+
+        ModelAndView modelAndView = new ModelAndView(index);
+        ModelMap modelMap = modelAndView.getModelMap();
+
+        List<String> contentPages = new ArrayList<String>();
+        contentPages.add(consumption+JSPSUFFIX);
+        modelMap.put(CONTENTPAGE,contentPages);
+
+        List<StepBean> steps = new ArrayList<StepBean>();
+        steps.add(StepBean.Consumption);
+        modelMap.put(STEPS, steps);
+
+        List<Expend> expends = expendService.findAll();
+        modelMap.put(EXPENDS, expends);
+
+        String[] dishes = req.getParameterValues("dishes");
+        String riches = req.getParameter("riches");
+
+        int sum = 0;
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i< dishes.length;i++){
+            String val[] = dishes[i].split(",");
+            sb.append(val[0]+" ");
+            sum += Integer.parseInt(val[1]);
+        }
+        sum +=  Integer.parseInt(riches);
+        Date date = new Date();
+        Expend expend = new Expend(sum,date,"成都小吃",sb.toString());
+        accountService.expend(expend);
+       return modelAndView;
+    }
+
     @RequestMapping(value = "/admin/logout.html")
     public String logout(HttpSession session){
         session.removeAttribute(USERNAME);
@@ -293,12 +361,17 @@ public class UserController {
     public static final String JSPSUFFIX = ".jsp";
     public static final String TODAYCONSUME = "todayConsume";
     public static final String RESTAURANT  = "restaurant";
+    public static final String EXPENDS = "expends";
+
 
     @Value("dashboard")
     private String dashboard;
 
     @Value("userManage")
     private String userManage;
+
+    @Value("consumption")
+    private String consumption;
 
     @Value("/admin/mainFrame")
     private String mainFrame;
@@ -323,10 +396,15 @@ public class UserController {
     @Value("dishManage")
     private String dishManage;
 
+    @Value("dishSelect")
+    private String dishSelect;
+
     @Autowired
     private IUserService userService;
     @Autowired
     private IAccountService accountService;
     @Autowired
     private IDishService dishService;
+    @Autowired
+    private IExpendService expendService;
 }

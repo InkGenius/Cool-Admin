@@ -2,6 +2,7 @@ package com.order.admin.service;
 
 import com.order.model.Account;
 import com.order.model.Consume;
+import com.order.model.Expend;
 
 import java.util.Date;
 
@@ -17,6 +18,7 @@ import java.util.Date;
      int getCount();
 
      boolean consume(Consume consume);
+     boolean expend(Expend expend);
      boolean append(int amount);
 
      int getTodayConsume();
