@@ -15,7 +15,7 @@
                 </li>
                 <li><a class="ajax-link" href="/admin/dishSelect.html"><i class="glyphicon glyphicon-list-alt"></i><span> 今日消费</span></a></li>
                 <li><a class="ajax-link" href="/admin/dishesManage.html"><i class="glyphicon glyphicon-edit"></i><span> 菜单</span></a></li>
-                <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> 评价</span></a>
+                <li><a class="ajax-link" href="/admin/record.html"><i class="glyphicon glyphicon-font"></i><span>消费记录</span></a>
                 </li>
                 <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> 菜谱</span></a>
                 </li>

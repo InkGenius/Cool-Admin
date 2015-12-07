@@ -21,7 +21,6 @@ public class AccountServiceImpl implements IAccountService{
     @Autowired
     private IAccountDao accountDao;
 
-
     public Account findAccountById(long id) {
 
         return accountDao.findAccountById(id);
@@ -51,7 +50,9 @@ public class AccountServiceImpl implements IAccountService{
     public boolean expend(Expend expend) {
         Account account = findAccountById(1);
         account.setRemainder(account.getRemainder() - expend.getAmount());
+
         accountDao.update(account);
+
         accountDao.saveExpend(expend);
         return true;
     }

@@ -33,12 +33,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${expends}" var="user">
+                    <c:forEach items="${expends}" var="ex">
                         <tr>
-                            <td class="center">${expends.date}</td
-                            <td class="center">${expends.restaurant}</td>
-                            <td class="center">${expends.amount}</td>
-                            <td class="center">${expends.menu}</td>
+                            <td class="center">${ex.date}</td>
+                            <td class="center">${ex.restaurant}</td>
+                            <td class="center">${ex.amount}</td>
+                            <td class="center">${ex.menu}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

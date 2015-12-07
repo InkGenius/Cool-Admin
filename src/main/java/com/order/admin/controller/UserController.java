@@ -276,7 +276,6 @@ public class UserController {
     @RequestMapping(value = "/admin/dishSelect.html",method = RequestMethod.GET)
     public ModelAndView selectDishes(){
 
-
         ModelAndView modelAndView = new ModelAndView(index);
         ModelMap modelMap = modelAndView.getModelMap();
 
@@ -334,6 +333,7 @@ public class UserController {
         Date date = new Date();
         Expend expend = new Expend(sum,date,"成都小吃",sb.toString());
         accountService.expend(expend);
+
        return modelAndView;
     }
 
@@ -345,6 +345,27 @@ public class UserController {
 
     private boolean isValidUser(String username,String password){
         return userService.isValidateUser(username, password);
+    }
+
+
+    @RequestMapping(value = "/admin/record.html",method = RequestMethod.GET)
+    public ModelAndView manageRecord(){
+
+        ModelAndView modelAndView = new ModelAndView(index);
+        ModelMap modelMap = modelAndView.getModelMap();
+
+        List<String> contentPages = new ArrayList<String>();
+        contentPages.add(consumption+JSPSUFFIX);
+        modelMap.put(CONTENTPAGE,contentPages);
+
+        List<StepBean> steps = new ArrayList<StepBean>();
+        steps.add(StepBean.Consumption);
+        modelMap.put(STEPS, steps);
+
+        List<Expend> expends = expendService.findAll();
+        modelMap.put(EXPENDS, expends);
+
+        return modelAndView;
     }
 
     public static final String CONTENTPAGE = "contentpages";
