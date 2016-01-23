@@ -1,10 +1,8 @@
 package com.order.admin.service;
 
 import com.order.model.Account;
-import com.order.model.Consume;
+import com.order.model.Payment;
 import com.order.model.Expend;
-
-import java.util.Date;
 
 /**
  * Created by daisong on 2015/11/23.
@@ -17,7 +15,7 @@ import java.util.Date;
      int getReminder();
      int getCount();
 
-     boolean consume(Consume consume);
+     boolean consume(Payment consume);
      boolean expend(Expend expend);
      boolean append(int amount);
 

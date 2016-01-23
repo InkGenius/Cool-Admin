@@ -1,9 +1,8 @@
 package com.order.admin.service;
 
-import antlr.LexerSharedInputState;
-import com.order.model.Catagory;
-import com.order.model.Dish;
-import com.order.model.Restaurant;
+import com.order.model.FoodType;
+import com.order.model.Food;
+import com.order.model.Site;
 
 import java.util.List;
 
@@ -16,15 +15,15 @@ import java.util.List;
  */
  public interface IDishService {
 
-    Dish findDishById(long id);
-    Dish findDishByhname(String dishname);
+    Food findDishById(long id);
+    Food findDishByhname(String dishname);
 
-    boolean addDish(Dish dish);
+    boolean addDish(Food dish);
 
     boolean deleteDishById(long id);
     boolean deleteDishByName(String name);
 
-    boolean updateDish(Dish dish);
+    boolean updateDish(Food dish);
 
     boolean updateScore(String name,int score);
     boolean updateTimes(String name,int times);
@@ -32,9 +31,9 @@ import java.util.List;
     boolean setBlack(String name,boolean isBlack);
     boolean setBackup(String name,String message);
 
-    List<Dish> findAllDishesOfType(int type);
-    List<Dish> findAllDishes();
-    List<Dish> findAllDishesOfRes(String res);
-    List<Catagory> findCatagorys();
-    List<Restaurant> findAllRes();
+    List<Food> findAllDishesOfType(int type);
+    List<Food> findAllDishes();
+    List<Food> findAllDishesOfRes(String res);
+    List<FoodType> findCatagorys();
+    List<Site> findAllRes();
 }

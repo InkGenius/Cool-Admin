@@ -1,8 +1,6 @@
 package com.order.admin.dao;
 
-import com.order.model.Catagory;
-import com.order.model.Dish;
-import com.order.model.Restaurant;
+import com.order.model.Food;
 
 import java.util.List;
 
@@ -15,25 +13,17 @@ import java.util.List;
  */
  public interface IDishDao {
 
-    Dish findDishById(long id);
-    Dish findDishByhname(String dishname);
-
-    boolean addDish(Dish dish);
-
-    boolean deleteDishById(long id);
+    Food findDishByName(String name);
     boolean deleteDishByName(String name);
-
-    boolean updateDish(Dish dish);
 
     boolean updateScore(String name,int score);
     boolean updateTimes(String name,int times);
+
     int getPrice(String name);
+
     boolean setBlack(String name,boolean isBlack);
     boolean setBackup(String name,String message);
 
-    List<Dish> findAllDishes();
-    List<Dish> findAllDishesOfRes(String res);
-    List<Dish> findAllDishesOfType(int type);
-    List<Catagory> findCatagorys();
-    List<Restaurant> findAllRes();
+    List<Food> findAllDishesOfRes(String res);
+    List<Food> findAllDishesOfType(int type);
  }

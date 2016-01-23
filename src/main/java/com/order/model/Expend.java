@@ -1,5 +1,6 @@
 package com.order.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * Time: 16:04
  * To change this template use File | Settings | File Templates.
  */
-public class Expend {
+public class Expend implements Serializable{
 
     private long id;
     private int amount;

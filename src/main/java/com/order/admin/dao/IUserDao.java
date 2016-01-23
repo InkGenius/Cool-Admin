@@ -6,7 +6,6 @@ import com.order.model.User;
  * User: daisong
  * Date: 15-11-22
  * Time: 下午2:49
- * To change this template use File | Settings | File Templates.
  */
 public interface IUserDao extends IBaseModelDao<User,Long>{
     /**
@@ -15,14 +14,14 @@ public interface IUserDao extends IBaseModelDao<User,Long>{
      * @param password
      * @return
      */
-    public boolean checkUser(String username, String password);
+    boolean checkUser(String username, String password);
 
     /**
      * Find the unique User by its name.
      * @param username
      * @return
      */
-    public User findUserByUsername(String username);
+    User findUserByUsername(String username);
 
-    public User findUserByEmail(String email);
+    User findUserByEmail(String email);
 }

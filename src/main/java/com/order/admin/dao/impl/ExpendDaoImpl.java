@@ -2,12 +2,7 @@ package com.order.admin.dao.impl;
 
 import com.order.admin.dao.IExpendDao;
 import com.order.model.Expend;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,15 +12,6 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Repository
-public class ExpendDaoImpl extends HibernateDaoSupport implements IExpendDao {
+public class ExpendDaoImpl extends BaseModelDaoImpl<Expend,Long>  implements IExpendDao {
 
-    @Autowired
-    public void setSuperSessionFactory(SessionFactory sessionFactory){
-        super.setSessionFactory(sessionFactory);
-    }
-
-    public List<Expend> findAll() {
-        String hql = "from Expend ";
-        return this.getHibernateTemplate().find(hql);
-    }
 }

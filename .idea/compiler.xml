@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="charisma-admin" />
+        <module name="Spitter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="charisma-admin" target="1.5" />
+      <module name="Spitter" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

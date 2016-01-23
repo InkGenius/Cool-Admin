@@ -3,13 +3,10 @@ package com.order.admin.service.impl;
 import com.order.admin.dao.IAccountDao;
 import com.order.admin.service.IAccountService;
 import com.order.model.Account;
-import com.order.model.Append;
-import com.order.model.Consume;
+import com.order.model.Payment;
 import com.order.model.Expend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 /**
  * Created by daisong on 2015/11/24.
@@ -39,7 +36,7 @@ public class AccountServiceImpl implements IAccountService{
         return findAccountById(1).getCount();
     }
 
-    public boolean consume(Consume consume) {
+    public boolean consume(Payment consume) {
         Account account = findAccountById(1);
         account.setRemainder(account.getRemainder() - consume.getSpend());
         accountDao.update(account);
@@ -72,7 +69,7 @@ public class AccountServiceImpl implements IAccountService{
     }
 
     public int getTodayConsume() {
-        Consume account = accountDao.findAccountByDate();
+        Payment account = accountDao.findAccountByDate();
         if(account != null){
             return account.getSpend();
         }

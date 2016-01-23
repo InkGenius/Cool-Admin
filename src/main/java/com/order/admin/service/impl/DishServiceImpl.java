@@ -2,9 +2,9 @@ package com.order.admin.service.impl;
 
 import com.order.admin.dao.IDishDao;
 import com.order.admin.service.IDishService;
-import com.order.model.Catagory;
-import com.order.model.Dish;
-import com.order.model.Restaurant;
+import com.order.model.FoodType;
+import com.order.model.Food;
+import com.order.model.Site;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,15 +23,15 @@ public class DishServiceImpl implements IDishService {
     @Autowired
     private IDishDao dishDao;
 
-    public Dish findDishById(long id) {
+    public Food findDishById(long id) {
         return dishDao.findDishById(id);
     }
 
-    public Dish findDishByhname(String name) {
+    public Food findDishByhname(String name) {
         return dishDao.findDishByhname(name);
     }
 
-    public boolean addDish(Dish dish) {
+    public boolean addDish(Food dish) {
         return dishDao.addDish(dish);
     }
 
@@ -43,7 +43,7 @@ public class DishServiceImpl implements IDishService {
         return dishDao.deleteDishByName(name);
     }
 
-    public boolean updateDish(Dish dish) {
+    public boolean updateDish(Food dish) {
         return dishDao.updateDish(dish);
     }
 
@@ -68,23 +68,23 @@ public class DishServiceImpl implements IDishService {
         return dishDao.setBackup(name, message);
     }
 
-    public List<Dish> findAllDishesOfType(int type) {
+    public List<Food> findAllDishesOfType(int type) {
         return dishDao.findAllDishesOfType(type);
     }
 
-    public List<Dish> findAllDishes() {
+    public List<Food> findAllDishes() {
         return dishDao.findAllDishes();
     }
 
-    public List<Dish> findAllDishesOfRes(String res) {
+    public List<Food> findAllDishesOfRes(String res) {
         return dishDao.findAllDishesOfRes(res);
     }
 
-    public List<Catagory> findCatagorys() {
+    public List<FoodType> findCatagorys() {
         return dishDao.findCatagorys();
     }
 
-    public List<Restaurant> findAllRes() {
+    public List<Site> findAllRes() {
         return dishDao.findAllRes();
     }
 

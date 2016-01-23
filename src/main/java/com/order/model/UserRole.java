@@ -12,6 +12,7 @@ public enum UserRole {
     ADMIN("管理员"),COMMON("普通用户");
 
     private String text;
+
     UserRole(String text){
         this.text = text;
     }

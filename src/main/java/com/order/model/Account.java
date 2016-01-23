@@ -1,31 +1,43 @@
 package com.order.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by daisong on 2015/11/23.
  */
 public class Account implements Serializable {
 
-    private long id;
-    private int sum;
-    private int remainder;
-    private int count;
-
-    public long getId() {
-        return id;
+    public String getGuid(){
+        return guid;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setGuid(String guid) {
+        this.guid = guid;
     }
 
-    public int getSum() {
-        return sum;
+    public AccountAlertType getType() {
+        return type;
     }
 
-    public void setSum(int sum) {
-        this.sum = sum;
+    public void setType(AccountAlertType type) {
+        this.type = type;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public int getRemainder() {
@@ -36,11 +48,24 @@ public class Account implements Serializable {
         this.remainder = remainder;
     }
 
-    public int getCount() {
-        return count;
+    public Account() {
+
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public String getAlertGuid() {
+        return alertGuid;
     }
+
+    public void setAlertGuid(String alertGuid) {
+        this.alertGuid = alertGuid;
+    }
+
+    private String guid;
+    private String alertGuid;
+    private AccountAlertType type;
+    private int amount;
+    private Date date;
+    private int remainder;
+
+
 }

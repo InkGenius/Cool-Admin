@@ -18,11 +18,11 @@
 
 		<mapping resource="/User.hbm.xml" />
 		<mapping resource="/Account.hbm.xml" />
-        <mapping resource="/Consume.hbm.xml" />
-		<mapping resource="/Dish.hbm.xml" />
-        <mapping resource="/Catagory.hbm.xml" />
+        <mapping resource="/Payment.hbm.xml" />
+		<mapping resource="/Food.hbm.xml" />
+        <mapping resource="/FoodType.hbm.xml" />
 		<mapping resource="/Append.hbm.xml" />
-		<mapping resource="/Restaurant.hbm.xml" />
+		<mapping resource="/Site.hbm.xml" />
 		<mapping resource="/Expend.hbm.xml" />
 
 	</session-factory>

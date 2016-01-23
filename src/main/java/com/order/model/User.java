@@ -9,7 +9,6 @@ import java.util.Date;
  */
 public class User  implements java.io.Serializable {
 
-
      private long id;
      private String username;
      private String password;
@@ -21,8 +20,7 @@ public class User  implements java.io.Serializable {
 
     public User() {
     }
-
-	
+    	
     public User(String username, String password, Date registerDate, UserRole role) {
         this.username = username;
         this.password = password;

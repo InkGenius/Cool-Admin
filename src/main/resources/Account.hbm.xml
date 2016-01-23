@@ -5,16 +5,22 @@
 <hibernate-mapping>
 
     <class name="com.order.model.Account" table="Account">
-
-
-        <id name="id" type="long" column="ACCOUNTID">
+        <id name="guid" type="string" column="GUID">
             <meta attribute="scope-set">protected</meta>
-            <generator class="native" />
+            <generator class="uuid"/>
         </id>
 
-        <property name="sum" type="int" column="SUM" not-null="true" />
-        <property name="remainder" type="int" column="REMAINNDER" not-null="true" />
-        <property name="count" type="int" column="COUNT" />
+        <property name="alertGuid" type="string" column="ALERTGUID" />
 
+        <property name="type" column="TYPE" not-null="true">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.order.model.AccountAlertType</param>
+            </type>
+        </property>
+
+        <property name="amount" type="int" column="AMOUNT" not-null="true" />
+        <property name="date" type="date" column="DATE" not-null="true"/>
+        <property name="remainder" type="int" column="REMAINNDER" not-null="true" />
     </class>
+
 </hibernate-mapping>

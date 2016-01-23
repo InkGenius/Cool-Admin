@@ -1,14 +1,7 @@
 package com.order.admin.dao.impl;
 
-import com.order.admin.dao.IAccountDao;
 import com.order.admin.dao.IDishDao;
-import com.order.model.Account;
-import com.order.model.Catagory;
-import com.order.model.Dish;
-import com.order.model.Restaurant;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import com.order.model.Food;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,103 +11,62 @@ import java.util.List;
  * User: daisong
  * Date: 2015/11/29
  * Time: 21:40
- * To change this template use File | Settings | File Templates.
  */
 @Repository
-public class DishDaoImpl extends HibernateDaoSupport implements IDishDao{
+public class DishDaoImpl extends BaseModelDaoImpl<Food,Long> implements IDishDao{
 
-    @Autowired
-    public void setSuperSessionFactory(SessionFactory sessionFactory){
-        super.setSessionFactory(sessionFactory);
-    }
-
-    public Dish findDishById(long id) {
-        String hsql = "FROM Dish as a WHERE a.id =" + id;
-        Dish res = (Dish)getSession().createQuery(hsql).list().get(0);
+    public Food findDishByName(String dishname) {
+        String hsql = "FROM Food as a WHERE a.name =" + dishname;
+        Food res = (Food)currentSession().createQuery(hsql).list().get(0);
         return res;
-    }
-
-    public Dish findDishByhname(String dishname) {
-        String hsql = "FROM Dish as a WHERE a.name =" + dishname;
-        Dish res = (Dish)getSession().createQuery(hsql).list().get(0);
-        return res;
-    }
-
-    public boolean addDish(Dish dish) {
-        this.getHibernateTemplate().save(dish);
-        return true;
-    }
-
-    public boolean deleteDishById(long id) {
-        this.getHibernateTemplate().delete(findDishById(id));
-        return true;
     }
 
     public boolean deleteDishByName(String name) {
-        this.getHibernateTemplate().delete(findDishByhname(name));
-        return true;
-    }
-
-    public boolean updateDish(Dish dish) {
-        this.getHibernateTemplate().update(dish);
+        this.currentSession().delete(findDishByName(name));
         return true;
     }
 
     public boolean updateScore(String name,int score) {
-        Dish dish = findDishByhname(name);
+        Food dish = findDishByName(name);
         dish.setScore(score);
-        updateDish(dish);
+        update(dish);
         return true;
     }
 
     public boolean updateTimes(String name,int times) {
-        Dish dish = findDishByhname(name);
+        Food dish = findDishByName(name);
         dish.setTimes(dish.getTimes() + times);
-        updateDish(dish);
+        update(dish);
         return true;
     }
 
     public int getPrice(String name) {
-        Dish dish = findDishByhname(name);
+        Food dish = findDishByName(name);
         return dish.getPrice();
     }
 
     public boolean setBlack(String name,boolean isBlack) {
-        Dish dish = findDishByhname(name);
+        Food dish = findDishByName(name);
         dish.setBlack(isBlack);
-        updateDish(dish);
+        update(dish);
         return true;
     }
 
     public boolean setBackup(String name,String message) {
-        Dish dish = findDishByhname(name);
+        Food dish = findDishByName(name);
         dish.setBackup(message);
-        updateDish(dish);
+        update(dish);
         return true;
     }
 
-    public List<Dish> findAllDishes() {
-        String hql = "from Dish";
-        return this.getHibernateTemplate().find(hql);
+    public List<Food> findAllDishesOfRes(String res) {
+        String hql = "from Food as a where a.restaurant = " + res;
+        return this.currentSession().createQuery(hql).list();
     }
 
-    public List<Dish> findAllDishesOfRes(String res) {
-        String hql = "from Dish as a where a.restaurant = " + res;
-        return this.getHibernateTemplate().find(hql);
+    public List<Food> findAllDishesOfType(int type) {
+        String hql = "from Food as a where a.type = " + type;
+        return this.currentSession().createQuery(hql).list();
     }
 
-    public List<Dish> findAllDishesOfType(int type) {
-        String hql = "from Dish as a where a.type = " + type;
-        return this.getHibernateTemplate().find(hql);
-    }
-
-    public List<Catagory> findCatagorys() {
-        String hql = "from Catagory";
-        return this.getHibernateTemplate().find(hql);
-    }
-
-    public List<Restaurant> findAllRes() {
-        String hql = "from Restaurant";
-        return this.getHibernateTemplate().find(hql);
-    }
 }

@@ -1,9 +1,5 @@
 package com.order.admin.dao;
 
-import com.order.model.Expend;
-
-import java.util.List;
-
 /**
  * Created with IntelliJ IDEA.
  * User: daisong
@@ -12,5 +8,5 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface IExpendDao {
-    List<Expend> findAll();
+
 }

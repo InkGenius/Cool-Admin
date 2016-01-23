@@ -67,14 +67,14 @@ public class UserController {
 
         List<User> users = userService.findAllUsers();
         Account acc = accountService.findAccountById(1);
-        List<Dish> dishes = dishService.findAllDishes();
+        List<Food> dishes = dishService.findAllDishes();
         int todayConsume = accountService.getTodayConsume();
 
-        List<Catagory> catagorys = dishService.findCatagorys();
-        Map<String,List<Dish>> map = new HashMap<String, List<Dish>>();
+        List<FoodType> catagorys = dishService.findCatagorys();
+        Map<String,List<Food>> map = new HashMap<String, List<Food>>();
 
-        for (Catagory cata : catagorys) {
-            List<Dish> dishs = dishService.findAllDishesOfType(cata.getType());
+        for (FoodType cata : catagorys) {
+            List<Food> dishs = dishService.findAllDishesOfType(cata.getType());
             if (dishs.size() > 0) {
                 map.put(cata.getName(), dishs);
             }
@@ -168,7 +168,7 @@ public class UserController {
     @RequestMapping(value = "/admin/expense.html", method = RequestMethod.GET)
     public ModelAndView expense(){
         ModelAndView modelAndView = new ModelAndView();
-        List<Restaurant> resList = dishService.findAllRes();
+        List<Site> resList = dishService.findAllRes();
         ModelMap modelMap = modelAndView.getModelMap();
         modelMap.put(RESTAURANT, resList);
         modelAndView.setViewName(expense);
@@ -179,7 +179,7 @@ public class UserController {
     public ModelAndView expense(String expense,String location,String dishOne, String dishTwo,String dishThree,String dishFour,String dishFive){
         Date date = new Date();
         //System.out.println("test:"+expense + " "+ dishOne);
-        Consume consume = new Consume(Integer.parseInt(expense),date,location,dishOne,dishTwo,dishThree,dishFour,dishFive);
+        Payment consume = new Payment(Integer.parseInt(expense),date,location,dishOne,dishTwo,dishThree,dishFour,dishFive);
         accountService.consume(consume);
         return index();
     }
@@ -258,12 +258,12 @@ public class UserController {
 //        List<Dish> dishes = dishService.findAllDishes();
 //        modelMap.put(DISHES, dishes);
 
-        List<Catagory> catagorys = dishService.findCatagorys();
+        List<FoodType> catagorys = dishService.findCatagorys();
 
-        Map<String,List<Dish>> map = new HashMap<String, List<Dish>>();
+        Map<String,List<Food>> map = new HashMap<String, List<Food>>();
 
-        for (Catagory cata : catagorys) {
-            List<Dish> dishs = dishService.findAllDishesOfType(cata.getType());
+        for (FoodType cata : catagorys) {
+            List<Food> dishs = dishService.findAllDishesOfType(cata.getType());
             if (dishs.size() > 0) {
                 map.put(cata.getName(), dishs);
             }
@@ -287,12 +287,12 @@ public class UserController {
         steps.add(StepBean.DishesManage);
         modelMap.put(STEPS,steps);
 
-        List<Catagory> catagorys = dishService.findCatagorys();
+        List<FoodType> catagorys = dishService.findCatagorys();
 
-        Map<String,List<Dish>> map = new HashMap<String, List<Dish>>();
+        Map<String,List<Food>> map = new HashMap<String, List<Food>>();
 
-        for (Catagory cata : catagorys) {
-            List<Dish> dishs = dishService.findAllDishesOfType(cata.getType());
+        for (FoodType cata : catagorys) {
+            List<Food> dishs = dishService.findAllDishesOfType(cata.getType());
             if (dishs.size() > 0) {
                 map.put(cata.getName(), dishs);
             }

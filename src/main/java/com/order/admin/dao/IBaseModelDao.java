@@ -6,22 +6,21 @@ import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
- * User: yifan
- * Date: 13-11-8
+ * User: daisong
+ * Date: 1-11-8
  * Time: 上午8:41
  * To change this template use File | Settings | File Templates.
  */
 public interface IBaseModelDao<T extends Serializable,PK extends Serializable> {
 
-    public boolean create(T t);
-    public boolean update(T t);
-    public boolean delete(T t);
-    public boolean deleteById(PK id);
-    public T findById(PK id);
+    boolean create(T t);
+    boolean update(T t);
+    boolean delete(T t);
+    boolean deleteById(PK id);
+    T findById(PK id);
 
-    public T findUniqueResultByHsql(String sql);
-    public List<T> findByHql(String hql, Object[] paramters);
-    public List<T> findAll();
-
-    public Map<String,Object> convertObjectToMap(T t);
+    T findUniqueResultByHsql(String sql);
+    List<T> findByHql(String hql, Object[] paramters);
+    List<T> findAll();
+    Map<String,Object> convertObjectToMap(T t);
 }
