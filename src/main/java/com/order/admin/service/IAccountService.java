@@ -1,24 +1,27 @@
 package com.order.admin.service;
 
 import com.order.model.Account;
-import com.order.model.Payment;
-import com.order.model.Expend;
+
+import java.util.List;
+import java.util.Map;
 
 /**
- * Created by daisong on 2015/11/23.
+ * Created with IntelliJ IDEA.
+ * User: daisong
+ * Date: 16-1-24
+ * Time: 11:25
+ * To change this template use File | Settings | File Templates.
  */
- public interface IAccountService {
+public interface IAccountService {
 
-      Account findAccountById(long id);
+    Account findAccountByGuid(String guid);
+    void updateAccount(Account account);
+    void addAccount(Account account);
+    void deleteAccount(Account account);
 
-     int getSum();
-     int getReminder();
-     int getCount();
+    void deleteAccountByGuid(String guid);
+    List<Account> findAllAccounts();
 
-     boolean consume(Payment consume);
-     boolean expend(Expend expend);
-     boolean append(int amount);
-
-     int getTodayConsume();
-
+    List<Map<String,Object>> converAccountsToMap(List<Account> accounts);
+    Map<String,Object> convertAccountToMap(Account account);
 }

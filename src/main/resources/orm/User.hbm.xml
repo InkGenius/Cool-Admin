@@ -7,9 +7,9 @@
     <class name="com.order.model.User" table="User">
 
 
-        <id name="id" type="long" column="UserId">
+        <id name="guid" type="long" column="GUID">
             <meta attribute="scope-set">protected</meta>
-            <generator class="native" />
+            <generator class="uuid"/>
         </id>
 
         <property name="username" type="string" column="USERNAME" not-null="true" />

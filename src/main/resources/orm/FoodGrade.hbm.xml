@@ -4,16 +4,16 @@
 
 <hibernate-mapping>
 
-    <class name="com.order.model.Site" table="Site">
-
+    <class name="com.order.model.FoodGrade" table="FoodGrade">
         <id name="guid" type="string" column="GUID">
             <meta attribute="scope-set">protected</meta>
             <generator class="uuid"/>
         </id>
 
-        <property name="name" type="string" column="NAME" not-null="true" />
-        <property name="location" type="string" column="LOCATION" not-null="true" />
-        <property name="phone" type="string" column="PHONE" not-null="true"/>
+        <property name="payDetailGuid" type="string" column="PAYDETAILGUID" />
+        <property name="grade" type="int" column="GRADE" not-null="true" />
+        <property name="remark" type="string" column="REMARK" not-null="true"/>
 
     </class>
+
 </hibernate-mapping>

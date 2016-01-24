@@ -13,12 +13,13 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 
-
 /**
- * Created by daisong on 2015/11/23.
+ * Created with IntelliJ IDEA.
+ * User: daisong
+ * Date: 15-12-22
+ * Time: ионГ8:43
  */
-
 @Repository
-public class AccountDaoImpl extends BaseModelDaoImpl<Account,Long> implements IAccountDao {
+public class AccountDaoImpl extends BaseModelDaoImpl<Account,String> implements IAccountDao {
 
 }

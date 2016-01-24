@@ -1,8 +1,13 @@
 package com.order.admin.dao;
 
-/**
- * Created by daisong on 2015/11/23.
- */
-public interface IAccountDao {
+import com.order.model.Account;
 
+/**
+ * Created with IntelliJ IDEA.
+ * User: daisong
+ * Date: 15-12-23
+ * Time: ионГ8:43
+ */
+public interface IAccountDao  extends IBaseModelDao<Account,String>{
+    
 }

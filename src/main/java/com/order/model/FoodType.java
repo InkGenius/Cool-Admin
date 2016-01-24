@@ -1,5 +1,7 @@
 package com.order.model;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: daisong
@@ -7,7 +9,7 @@ package com.order.model;
  * Time: 21:06
  * To change this template use File | Settings | File Templates.
  */
-public class FoodType {
+public class FoodType implements Serializable {
 
     public FoodType() {
     }

@@ -1,26 +1,24 @@
 package com.order.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
  * User: daisong
- * Date: 2016/1/23
- * Time: 18:35
+ * Date: 2016/1/24
+ * Time: 9:53
  * To change this template use File | Settings | File Templates.
  */
-public class PayDetail implements Serializable {
-
+public class SiteGrade implements Serializable {
     private String guid;
     private String payGuid;
-    private String foodGuid;
+    private int grade;
+    private String remark;
 
-    public PayDetail() {
+    public SiteGrade() {
     }
 
     public String getGuid() {
-
         return guid;
     }
 
@@ -36,11 +34,19 @@ public class PayDetail implements Serializable {
         this.payGuid = payGuid;
     }
 
-    public String getFoodGuid() {
-        return foodGuid;
+    public int getGrade() {
+        return grade;
     }
 
-    public void setFoodGuid(String foodGuid) {
-        this.foodGuid = foodGuid;
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }

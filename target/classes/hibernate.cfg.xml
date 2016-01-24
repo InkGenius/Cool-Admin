@@ -16,13 +16,13 @@
 		<property name="connection.useUnicode">true</property>
 		<property name="connection.characterEncoding">UTF-8</property>
 
-		<mapping resource="/User.hbm.xml" />
-		<mapping resource="/Account.hbm.xml" />
-        <mapping resource="/Consume.hbm.xml" />
-		<mapping resource="/Dish.hbm.xml" />
-        <mapping resource="/Catagory.hbm.xml" />
+		<mapping resource="/orm/User.hbm.xml" />
+		<mapping resource="/orm/Account.hbm.xml" />
+        <mapping resource="/orm/Payment.hbm.xml" />
+		<mapping resource="/orm/Food.hbm.xml" />
+        <mapping resource="/orm/FoodType.hbm.xml" />
 		<mapping resource="/Append.hbm.xml" />
-		<mapping resource="/Restaurant.hbm.xml" />
+		<mapping resource="/orm/Site.hbm.xml" />
 		<mapping resource="/Expend.hbm.xml" />
 
 	</session-factory>

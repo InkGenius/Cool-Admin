@@ -38,7 +38,6 @@ public class UserServiceImpl implements IUserService {
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-
     public boolean isAdminUser(String username, String password) {
         User user = userDao.findUserByUsername(username);
         if(user != null && user.getPassword().equals(password) && user.getRole() == UserRole.ADMIN){
@@ -56,16 +55,14 @@ public class UserServiceImpl implements IUserService {
         return list;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-
     public Map<String, Object> convertUserToMap(User user) {
         return userDao.convertObjectToMap(user);
     }
 
 
-    public User findUserById(long id) {
-        return userDao.findById(id);
+    public User findUserByGuid(String guid) {
+        return userDao.findByGuid(guid);
     }
-
 
     public void updateUser(User user) {
         userDao.update(user);
@@ -82,10 +79,9 @@ public class UserServiceImpl implements IUserService {
     }
 
 
-    public void deleteUserById(long id) {
-        userDao.deleteById(id);
+    public void deleteUserByGuid(String guid) {
+        userDao.deleteByGuid(guid);
     }
-
 
     public List<User> findAllUsers() {
         return userDao.findAll();
@@ -94,6 +90,7 @@ public class UserServiceImpl implements IUserService {
     public User findUserByUsername(String username){
         return userDao.findUserByUsername(username);
     }
+
     @Autowired
     private IUserDao userDao;
 }

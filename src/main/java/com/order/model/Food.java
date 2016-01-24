@@ -17,8 +17,17 @@ public class Food implements Serializable{
     private String name;
     private int price;
     private String remark;
+    private int grade;
 
     public Food() {
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
     public String getGuid() {

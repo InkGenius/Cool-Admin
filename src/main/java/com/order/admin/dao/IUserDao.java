@@ -7,7 +7,7 @@ import com.order.model.User;
  * Date: 15-11-22
  * Time: 下午2:49
  */
-public interface IUserDao extends IBaseModelDao<User,Long>{
+public interface IUserDao extends IBaseModelDao<User,String>{
     /**
      * Check if the user is system user.
      * @param username

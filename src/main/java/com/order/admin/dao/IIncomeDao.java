@@ -1,12 +1,14 @@
 package com.order.admin.dao;
 
+import com.order.model.Income;
+
 /**
  * Created with IntelliJ IDEA.
  * User: daisong
- * Date: 2015/12/6
- * Time: 20:34
+ * Date: 2016/1/24
+ * Time: ионГ10:04
  * To change this template use File | Settings | File Templates.
  */
-public interface IExpendDao {
+public interface IIncomeDao extends IBaseModelDao<Income,String>{
 
 }

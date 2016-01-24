@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * Created with IntelliJ IDEA.
  * User: daisong
- * Date: 15-11-22
+ * Date: 15-12-24
  * Time: 上午8:43
  */
 @Transactional
@@ -48,17 +48,13 @@ public class BaseModelDaoImpl<T extends Serializable, PK extends Serializable>  
         return false;
     }
 
-    public boolean deleteById(PK id) {
-        delete(findById(id));
+    public boolean deleteByGuid(PK guid) {
+        delete(findByGuid(guid));
         return false;
     }
 
-    public T findById(PK id) {
-        String hsql = "FROM User as u WHERE u.id =" + id;
-        if (findUniqueResultByHsql(hsql) != null){
-            return (T)this.currentSession().load(getEntityClass(), id);
-        }
-        return null;
+    public T findByGuid(PK guid) {
+        return (T)this.currentSession().load(getEntityClass(), guid);
     }
 
     public List<T> findByHql(String hsql, Object[] paramters) {

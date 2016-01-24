@@ -8,25 +8,25 @@ import java.util.Map;
 /**
  * Created with IntelliJ IDEA.
  * User: daisong
- * Date: 15-11-22
+ * Date: 15-12-22
  * Time: 下午2:22
  * To change this template use File | Settings | File Templates.
  */
 public interface IUserService {
 
-    public User findUserById(long id);
-    public User findUserByUsername(String username);
-    public User findUserByEmail(String email);
-    public void updateUser(User user);
-    public void addUser(User user);
-    public void deleteUser(User user);
-    public void deleteUserById(long id);
-    public List<User> findAllUsers();
+     User findUserByGuid(String guid);
+     User findUserByUsername(String username);
+     User findUserByEmail(String email);
+     void updateUser(User user);
+     void addUser(User user);
+     void deleteUser(User user);
+     void deleteUserByGuid(String guid);
+     List<User> findAllUsers();
 
-    public boolean isValidateUser(User user);
-    public boolean isValidateUser(String username, String password);
-    public boolean isAdminUser(String username, String password);
+     boolean isValidateUser(User user);
+     boolean isValidateUser(String username, String password);
+     boolean isAdminUser(String username, String password);
 
-    public List<Map<String,Object>> convertUsersToMap(List<User> users);
-    public Map<String,Object> convertUserToMap(User user);
+     List<Map<String,Object>> convertUsersToMap(List<User> users);
+     Map<String,Object> convertUserToMap(User user);
 }

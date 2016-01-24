@@ -3,76 +3,59 @@ package com.order.admin.service.impl;
 import com.order.admin.dao.IAccountDao;
 import com.order.admin.service.IAccountService;
 import com.order.model.Account;
-import com.order.model.Payment;
-import com.order.model.Expend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by daisong on 2015/11/24.
- */
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
+/**
+ * Created with IntelliJ IDEA.
+ * User: daisong
+ * Date: 16-1-24
+ * Time: ÏÂÎç2:25
+ * To change this template use File | Settings | File Templates.
+ */
 @Service
-public class AccountServiceImpl implements IAccountService{
+public class AccountServiceImpl  implements IAccountService{
 
     @Autowired
     private IAccountDao accountDao;
 
-    public Account findAccountById(long id) {
-
-        return accountDao.findAccountById(id);
+    public Account findAccountByGuid(String guid) {
+        return accountDao.findByGuid(guid);
     }
 
-    public int getSum() {
-       return findAccountById(1).getSum();
-    }
-
-    public int getReminder() {
-
-        return findAccountById(1).getRemainder();
-    }
-
-    public int getCount() {
-        return findAccountById(1).getCount();
-    }
-
-    public boolean consume(Payment consume) {
-        Account account = findAccountById(1);
-        account.setRemainder(account.getRemainder() - consume.getSpend());
+    public void updateAccount(Account account) {
         accountDao.update(account);
-        accountDao.create(consume);
-        return true;
     }
 
-    public boolean expend(Expend expend) {
-        Account account = findAccountById(1);
-        account.setRemainder(account.getRemainder() - expend.getAmount());
-
-        accountDao.update(account);
-
-        accountDao.saveExpend(expend);
-        return true;
+    public void addAccount(Account account) {
+        accountDao.create(account);
     }
 
-    public boolean append(int amount) {
-        Account account = findAccountById(1);
-        account.setRemainder(account.getRemainder() + amount);
-        System.out.println("Óà¶î£º"+account.getRemainder());
-        account.setCount(account.getCount() + 1);
-        account.setSum(account.getSum() + amount);
-        accountDao.update(account);
-
-        Append append = new Append(amount);
-        accountDao.save(append);
-
-        return true;
+    public void deleteAccount(Account account) {
+        accountDao.delete(account);
     }
 
-    public int getTodayConsume() {
-        Payment account = accountDao.findAccountByDate();
-        if(account != null){
-            return account.getSpend();
+    public void deleteAccountByGuid(String guid) {
+        accountDao.deleteByGuid(guid);
+    }
+
+    public List<Account> findAllAccounts() {
+        return accountDao.findAll();
+    }
+
+    public List<Map<String, Object>> converAccountsToMap(List<Account> accounts) {
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        for(Account account:accounts){
+            list.add(convertAccountToMap(account));
         }
-        return 0;
+        return list;
+    }
+
+    public Map<String, Object> convertAccountToMap(Account account) {
+        return accountDao.convertObjectToMap(account);
     }
 }

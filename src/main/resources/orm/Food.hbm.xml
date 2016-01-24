@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.order.model.Food" table="Dish">
+
+        <id name="guid" type="string" column="GUID">
+            <meta attribute="scope-set">protected</meta>
+            <generator class="uuid"/>
+        </id>
+
+        <property name="siteGuid" type="string" column="SITEGUID" not-null="true" />
+        <property name="typeGuid" type="string" column="TYPEGUID" not-null="true" />
+        <property name="name" type="string" column="NAME" not-null="true" />
+        <property name="price" type="int" column="PRICE" not-null="true" />
+        <property name="remark" type="string" column="REMARK"/>
+        <property name="grade" type="int" column="GRADE" />
+    </class>
+</hibernate-mapping>

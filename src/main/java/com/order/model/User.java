@@ -1,5 +1,5 @@
 package com.order.model;
-// Generated 2013-11-9 9:42:51 by Hibernate Tools 3.2.2.GA
+// Generated 2015-11-9 9:42:51 by Hibernate Tools 3.2.2.GA
 
 
 import java.util.Date;
@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class User  implements java.io.Serializable {
 
-     private long id;
+     private String guid;
      private String username;
      private String password;
      private String realName;
@@ -20,35 +20,15 @@ public class User  implements java.io.Serializable {
 
     public User() {
     }
-    	
-    public User(String username, String password, Date registerDate, UserRole role) {
-        this.username = username;
-        this.password = password;
-        this.registerDate = registerDate;
-        this.role = role;
+
+    public String getGuid() {
+        return guid;
     }
 
-    public User(String username, String password, String realName, String email, String phoneNumber, UserRole role, Date registerDate) {
-       this.username = username;
-       this.password = password;
-       this.realName = realName;
-       this.email = email;
-       this.phoneNumber = phoneNumber;
-       this.registerDate = registerDate;
-       this.role = role;
+    public void setGuid(String guid) {
+        this.guid = guid;
     }
 
-    public User(String username,String password, String realName,String email,String phoneNumber,String roleText,Date registerDate){
-        this(username,password,realName,email,phoneNumber,UserRole.getUserRoleByText(roleText),registerDate);
-    }
-   
-    public long getId() {
-        return this.id;
-    }
-    
-    protected void setId(long id) {
-        this.id = id;
-    }
     public String getUsername() {
         return this.username;
     }
@@ -80,26 +60,21 @@ public class User  implements java.io.Serializable {
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
-    
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
     public Date getRegisterDate() {
         return this.registerDate;
     }
-    
     public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
     }
     public UserRole getRole() {
         return this.role;
     }
-    
     public void setRole(UserRole role) {
         this.role = role;
     }
-
-
     public void setRole(String roleName) {
         setRole(UserRole.getUserRoleByText(roleName));
     }
