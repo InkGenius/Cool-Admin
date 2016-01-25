@@ -4,7 +4,7 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
-		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/famouschina</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/repast</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">123456</property>
@@ -21,9 +21,10 @@
         <mapping resource="/orm/Payment.hbm.xml" />
 		<mapping resource="/orm/Food.hbm.xml" />
         <mapping resource="/orm/FoodType.hbm.xml" />
-		<mapping resource="/Append.hbm.xml" />
 		<mapping resource="/orm/Site.hbm.xml" />
-		<mapping resource="/Expend.hbm.xml" />
-
+		<mapping resource="/orm/SiteGrade.hbm.xml" />
+		<mapping resource="/orm/PayDetail.hbm.xml" />
+		<mapping resource="/orm/Income.hbm.xml" />
+		<mapping resource="/orm/FoodGrade.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

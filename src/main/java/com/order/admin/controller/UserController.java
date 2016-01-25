@@ -64,7 +64,7 @@ public class UserController {
         ModelMap modelMap = modelAndView.getModelMap();
 
         List<User> users = userService.findAllUsers();
-        Account acc = accountService.findAccountById(1);
+        Account acc = accountService.findById(1);
         List<Food> dishes = dishService.findAllDishes();
         int todayConsume = accountService.getTodayConsume();
 
@@ -163,39 +163,6 @@ public class UserController {
         return index();
     }
 
-    @RequestMapping(value = "/admin/expense.html", method = RequestMethod.GET)
-    public ModelAndView expense(){
-        ModelAndView modelAndView = new ModelAndView();
-        List<Site> resList = dishService.findAllRes();
-        ModelMap modelMap = modelAndView.getModelMap();
-        modelMap.put(RESTAURANT, resList);
-        modelAndView.setViewName(expense);
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/admin/expense.html", method = RequestMethod.POST)
-    public ModelAndView expense(String expense,String location,String dishOne, String dishTwo,String dishThree,String dishFour,String dishFive){
-        Date date = new Date();
-        //System.out.println("test:"+expense + " "+ dishOne);
-        Payment consume = new Payment(Integer.parseInt(expense),date,location,dishOne,dishTwo,dishThree,dishFour,dishFive);
-        accountService.consume(consume);
-        return index();
-    }
-
-    @RequestMapping(value = "/admin/append.html", method = RequestMethod.GET)
-    public ModelAndView append(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName(append);
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/admin/append.html", method = RequestMethod.POST)
-    public ModelAndView append(String append){
-        Date date = new Date();
-        accountService.append(Integer.parseInt(append));
-        return index();
-    }
-
     @RequestMapping(value = "/admin/addUser.html", method = RequestMethod.GET)
     public ModelAndView addUser(){
         ModelAndView modelAndView = new ModelAndView();
@@ -239,101 +206,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/admin/dishesManage.html",method = RequestMethod.GET)
-    public ModelAndView manageDishes(){
 
-        ModelAndView modelAndView = new ModelAndView(index);
-        ModelMap modelMap = modelAndView.getModelMap();
-
-        List<String> contentPages = new ArrayList<String>();
-        contentPages.add(dishManage+JSPSUFFIX);
-        modelMap.put(CONTENTPAGE,contentPages);
-
-        List<StepBean> steps = new ArrayList<StepBean>();
-        steps.add(StepBean.DishesManage);
-        modelMap.put(STEPS,steps);
-
-//        List<Dish> dishes = dishService.findAllDishes();
-//        modelMap.put(DISHES, dishes);
-
-        List<FoodType> catagorys = dishService.findCatagorys();
-
-        Map<String,List<Food>> map = new HashMap<String, List<Food>>();
-
-        for (FoodType cata : catagorys) {
-            List<Food> dishs = dishService.findAllDishesOfType(cata.getType());
-            if (dishs.size() > 0) {
-                map.put(cata.getName(), dishs);
-            }
-        }
-        modelMap.put(CATAGORYS, map);
-
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/admin/dishSelect.html",method = RequestMethod.GET)
-    public ModelAndView selectDishes(){
-
-        ModelAndView modelAndView = new ModelAndView(index);
-        ModelMap modelMap = modelAndView.getModelMap();
-
-        List<String> contentPages = new ArrayList<String>();
-        contentPages.add(dishSelect+JSPSUFFIX);
-        modelMap.put(CONTENTPAGE,contentPages);
-
-        List<StepBean> steps = new ArrayList<StepBean>();
-        steps.add(StepBean.DishesManage);
-        modelMap.put(STEPS,steps);
-
-        List<FoodType> catagorys = dishService.findCatagorys();
-
-        Map<String,List<Food>> map = new HashMap<String, List<Food>>();
-
-        for (FoodType cata : catagorys) {
-            List<Food> dishs = dishService.findAllDishesOfType(cata.getType());
-            if (dishs.size() > 0) {
-                map.put(cata.getName(), dishs);
-            }
-        }
-        modelMap.put(CATAGORYS, map);
-
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/admin/dishSelect.html",method = RequestMethod.POST)
-    public @ResponseBody ModelAndView selectDishes(HttpServletRequest req, HttpServletResponse resp){
-
-        ModelAndView modelAndView = new ModelAndView(index);
-        ModelMap modelMap = modelAndView.getModelMap();
-
-        List<String> contentPages = new ArrayList<String>();
-        contentPages.add(consumption+JSPSUFFIX);
-        modelMap.put(CONTENTPAGE,contentPages);
-
-        List<StepBean> steps = new ArrayList<StepBean>();
-        steps.add(StepBean.Consumption);
-        modelMap.put(STEPS, steps);
-
-        List<Expend> expends = expendService.findAll();
-        modelMap.put(EXPENDS, expends);
-
-        String[] dishes = req.getParameterValues("dishes");
-        String riches = req.getParameter("riches");
-
-        int sum = 0;
-        StringBuffer sb = new StringBuffer();
-        for(int i = 0; i< dishes.length;i++){
-            String val[] = dishes[i].split(",");
-            sb.append(val[0]+" ");
-            sum += Integer.parseInt(val[1]);
-        }
-        sum +=  Integer.parseInt(riches);
-        Date date = new Date();
-        Expend expend = new Expend(sum,date,"成都小吃",sb.toString());
-        accountService.expend(expend);
-
-       return modelAndView;
-    }
 
     @RequestMapping(value = "/admin/logout.html")
     public String logout(HttpSession session){
@@ -346,25 +219,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/admin/record.html",method = RequestMethod.GET)
-    public ModelAndView manageRecord(){
 
-        ModelAndView modelAndView = new ModelAndView(index);
-        ModelMap modelMap = modelAndView.getModelMap();
-
-        List<String> contentPages = new ArrayList<String>();
-        contentPages.add(consumption+JSPSUFFIX);
-        modelMap.put(CONTENTPAGE,contentPages);
-
-        List<StepBean> steps = new ArrayList<StepBean>();
-        steps.add(StepBean.Consumption);
-        modelMap.put(STEPS, steps);
-
-        List<Expend> expends = expendService.findAll();
-        modelMap.put(EXPENDS, expends);
-
-        return modelAndView;
-    }
 
     public static final String CONTENTPAGE = "contentpages";
     public static final String ROLE = "roles";
@@ -422,8 +277,8 @@ public class UserController {
     private IUserService userService;
     @Autowired
     private IAccountService accountService;
-    @Autowired
-    private IDishService dishService;
-    @Autowired
-    private IExpendService expendService;
+//    @Autowired
+//    private IDishService dishService;
+//    @Autowired
+//    private IExpendService expendService;
 }
