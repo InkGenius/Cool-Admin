@@ -2,6 +2,8 @@ package com.order.admin.dao;
 
 import com.order.model.Food;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: daisong
@@ -10,5 +12,5 @@ import com.order.model.Food;
  * To change this template use File | Settings | File Templates.
  */
 public interface IFoodDao extends IBaseModelDao<Food,String>{
-
+    List<Food> findFoodByType(String typeGuid);
 }

@@ -58,4 +58,10 @@ public class IncomeServiceImpl implements IIncomeService{
     public Map<String, Object> convertIncomeToMap(Income income) {
         return incomeDao.convertObjectToMap(income);
     }
+
+    public int getTotal() {
+        return incomeDao.getTotal();
+    }
+
+
 }

@@ -101,5 +101,5 @@
 </div>
 
 <script type="text/javascript" src="/js/cancel.js"></script>
-<script type="text/javascript" src="/js/updateDropdown.js"></script>
+<script type="text/javascript" src="/js/user.js"></script>
 <script type="text/javascript" src="/js/validator.js" ></script>

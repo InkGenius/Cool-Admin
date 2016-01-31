@@ -24,11 +24,13 @@
         <processorPath useClasspath="true" />
         <module name="charisma-admin" />
         <module name="Spitter" />
+        <module name="Spitter-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="charisma-admin" target="1.5" />
       <module name="Spitter" target="1.5" />
+      <module name="Spitter-web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

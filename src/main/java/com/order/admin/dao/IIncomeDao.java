@@ -10,5 +10,5 @@ import com.order.model.Income;
  * To change this template use File | Settings | File Templates.
  */
 public interface IIncomeDao extends IBaseModelDao<Income,String>{
-
+    int getTotal();
 }

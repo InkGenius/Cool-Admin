@@ -58,4 +58,8 @@ public class FoodServiceImpl implements IFoodService{
     public Map<String, Object> convertFoodToMap(Food food) {
         return foodDao.convertObjectToMap(food);
     }
+
+    public List<Food> findFoodByType(String typeGuid) {
+        return foodDao.findFoodByType(typeGuid);
+    }
 }

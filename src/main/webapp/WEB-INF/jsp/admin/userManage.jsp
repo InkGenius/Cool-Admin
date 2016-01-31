@@ -25,7 +25,7 @@
             <div class="box-content">
 
                 <div class="row-fluid custom-button">
-                    <a class="btn btn-info btn-sm userDialogUpdate" href="#" data-target="/admin/addUser.html">
+                    <a class="btn btn-info btn-sm addNewUser" href="#" data-target="/admin/addUser.html">
                         <i class="glyphicon glyphicon-edit icon-white"></i>
                         创建新用户
                     </a>
@@ -52,12 +52,12 @@
                             <td class="center">${user.email}</td>
                             <td class="center">${user.registerDate}</td>
                             <td class="center">
-                                <a class="btn btn-info userDialogUpdate" href="#" data-value="${user.id}"
+                                <a class="btn btn-info userDialogUpdate" href="#" data-value="${user.guid}"
                                    data-target="/admin/updateUser.html">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     修改
                                 </a>
-                                <a class="btn btn-danger" href="/admin/deleteUser.html?id=${user.id}">
+                                <a class="btn btn-danger" href="/admin/deleteUser.html?guid=${user.guid}">
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     删除
                                 </a>

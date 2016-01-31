@@ -58,4 +58,9 @@ public class PaymentServiceImpl implements IPaymentService{
     public Map<String, Object> convertPaymentToMap(Payment payment) {
         return paymentDao.convertObjectToMap(payment);
     }
+
+    public Payment getPaymentOfToday() {
+        return paymentDao.getPaymentOfToday();
+    }
+
 }

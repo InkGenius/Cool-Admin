@@ -22,4 +22,9 @@ import java.util.List;
 @Repository
 public class AccountDaoImpl extends BaseModelDaoImpl<Account,String> implements IAccountDao {
 
+    public Account findLatestRecord() {
+        String hsql = "FROM Account ORDER BY date DESC";
+        Query query = currentSession().createQuery(hsql).setMaxResults(1);
+        return (Account)query.uniqueResult();
+    }
 }

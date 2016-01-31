@@ -24,4 +24,5 @@ public interface IPaymentService {
 
     List<Map<String,Object>> converPaymentsToMap(List<Payment> payments);
     Map<String,Object> convertPaymentToMap(Payment payment);
+    Payment getPaymentOfToday();
 }

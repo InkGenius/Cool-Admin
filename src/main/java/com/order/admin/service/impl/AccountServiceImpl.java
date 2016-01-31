@@ -58,4 +58,8 @@ public class AccountServiceImpl  implements IAccountService{
     public Map<String, Object> convertAccountToMap(Account account) {
         return accountDao.convertObjectToMap(account);
     }
+
+    public Account findLatestRecord() {
+        return accountDao.findLatestRecord();
+    }
 }

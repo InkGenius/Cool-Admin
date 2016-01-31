@@ -10,5 +10,5 @@ import com.order.model.Payment;
  * To change this template use File | Settings | File Templates.
  */
 public interface IPaymentDao extends IBaseModelDao<Payment,String>{
-
+    Payment getPaymentOfToday();
 }

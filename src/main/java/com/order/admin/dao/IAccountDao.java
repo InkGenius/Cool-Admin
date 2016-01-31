@@ -9,5 +9,5 @@ import com.order.model.Account;
  * Time: ионГ8:43
  */
 public interface IAccountDao  extends IBaseModelDao<Account,String>{
-    
+    Account findLatestRecord();
 }

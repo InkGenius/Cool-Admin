@@ -1,7 +1,9 @@
 package com.order.admin.dao.impl;
 
 import com.order.admin.dao.IIncomeDao;
+import com.order.model.Account;
 import com.order.model.Income;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,4 +15,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class IncomeDaoImpl extends BaseModelDaoImpl<Income,String> implements IIncomeDao {
 
+    public int getTotal() {
+        String hsql = "select sum(amount) from Income";
+        Query query = currentSession().createQuery(hsql);
+        Object count = query.uniqueResult();
+        if(count != null){
+            return (Integer)count;
+        }else{
+            return 0;
+        }
+    }
 }
+

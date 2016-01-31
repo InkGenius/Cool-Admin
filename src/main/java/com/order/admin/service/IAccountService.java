@@ -24,4 +24,5 @@ public interface IAccountService {
 
     List<Map<String,Object>> converAccountsToMap(List<Account> accounts);
     Map<String,Object> convertAccountToMap(Account account);
+    Account findLatestRecord();
 }

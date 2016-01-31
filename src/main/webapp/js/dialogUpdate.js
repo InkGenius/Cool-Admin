@@ -3,18 +3,32 @@
  */
 $(document).ready(function(){
 
+    $(".addNewUser").click(function(e){
+        var targetUrl = $(this).attr("data-target");
+        $.ajax({
+            url: targetUrl,
+            method:'get',
+            dataType:'html',
+            success:function(data){
+                e.preventDefault();
+                $("#myModal").html(data);
+                $('#myModal').modal('show');
+            }
+        });
+    });
+
     $(".userDialogUpdate").click(function(e){
-        var id = "1";
+        var guid = "1";
 
         if($(this).attr("data-value")){
-            id = $(this).attr("data-value");
+            guid = $(this).attr("data-value");
         }
 
         var targetUrl = $(this).attr("data-target");
         $.ajax({
             url: targetUrl,
             method:'get',
-            data: "id="+id,
+            data: "guid="+guid,
             dataType:'html',
             success:function(data){
                 e.preventDefault();
@@ -45,5 +59,4 @@ $(document).ready(function(){
             }
         });
     });
-
 });

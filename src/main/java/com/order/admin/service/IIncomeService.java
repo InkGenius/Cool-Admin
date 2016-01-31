@@ -24,4 +24,5 @@ public interface IIncomeService {
 
     List<Map<String,Object>> converIncomesToMap(List<Income> incomes);
     Map<String,Object> convertIncomeToMap(Income income);
+    int getTotal();
 }

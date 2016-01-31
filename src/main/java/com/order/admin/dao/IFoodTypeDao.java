@@ -2,6 +2,8 @@ package com.order.admin.dao;
 
 import com.order.model.FoodType;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: daisong

@@ -1,7 +1,6 @@
 package com.order.admin.controller;
 
-import com.order.admin.service.IAccountService;
-import com.order.admin.service.IUserService;
+import com.order.admin.service.*;
 import com.order.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -53,7 +50,6 @@ public class UserController {
             modelMap.put(ERRORMSG,"用户名或密码错误");
             target.setViewName(login);
         }
-
         return target;
     }
 
@@ -64,27 +60,39 @@ public class UserController {
         ModelMap modelMap = modelAndView.getModelMap();
 
         List<User> users = userService.findAllUsers();
-        Account acc = accountService.findById(1);
-        List<Food> dishes = dishService.findAllDishes();
-        int todayConsume = accountService.getTodayConsume();
+        Account account = accountService.findLatestRecord();
+        int totalIncome = incomeService.getTotal();
 
-        List<FoodType> catagorys = dishService.findCatagorys();
+        List<Food> dishes = foodService.findAllFoods();
+
+        Payment todayPayment = paymentService.getPaymentOfToday();
+
+        List<FoodType> catagorys = foodTypeService.findAllFoodTypes();
         Map<String,List<Food>> map = new HashMap<String, List<Food>>();
 
-        for (FoodType cata : catagorys) {
-            List<Food> dishs = dishService.findAllDishesOfType(cata.getType());
-            if (dishs.size() > 0) {
-                map.put(cata.getName(), dishs);
+        for (FoodType type : catagorys) {
+            List<Food> foods = foodService.findFoodByType(type.getGuid());
+            if (foods.size() > 0) {
+                map.put(type.getName(), foods);
             }
         }
 
 
         modelMap.put(USERS, users);
-        modelMap.put(REMAINDER,acc.getRemainder());
-        modelMap.put(SUM, acc.getSum());
+
+
+        if(account != null){
+            modelMap.put(REMAINDER, account.getRemainder());
+        }
+
+        modelMap.put(INCOMETOTAL, totalIncome);
+
         modelMap.put(DISHES, dishes);
         modelMap.put(CATAGORYS, map);
-        modelMap.put(TODAYCONSUME, todayConsume);
+
+        if(todayPayment != null){
+            modelMap.put(TODAYCONSUME, todayPayment.getAmount());
+        }
 
         List<String> contentPages = new ArrayList<String>();
         contentPages.add(dashboard + JSPSUFFIX);
@@ -99,8 +107,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/admin/updateUser.html",method = RequestMethod.GET)
-    public ModelAndView ajaxUpdateUser(long id){
-        User currentUser = userService.findUserById(id);
+    public ModelAndView ajaxUpdateUser(String guid){
+        User currentUser = userService.findUserByGuid(guid);
         ModelAndView modelAndView = new ModelAndView(userInfo);
         ModelMap modelMap = modelAndView.getModelMap();
         modelMap.put(USER,currentUser);
@@ -109,11 +117,9 @@ public class UserController {
         return modelAndView;
     }
 
-
     @RequestMapping(value = "/admin/updateUser.html",method = RequestMethod.POST)
-    public ModelAndView updateUser(long id,String realName,String phoneNumber,String email,String roleText){
-
-        User user = userService.findUserById(id);
+    public ModelAndView updateUser(String guid,String realName,String phoneNumber,String email,String roleText){
+        User user = userService.findUserByGuid(guid);
         user.setRealName(realName);
         user.setPhoneNumber(phoneNumber);
         user.setEmail(email);
@@ -153,13 +159,11 @@ public class UserController {
     }
 
     @RequestMapping(value = "/admin/deleteUser.html")
-    public ModelAndView deleteUser(long id){
-
-        User user = userService.findUserById(id);
+    public ModelAndView deleteUser(String guid){
+        User user = userService.findUserByGuid(guid);
         if(user != null){
-            userService.deleteUserById(id);
+            userService.deleteUserByGuid(guid);
         }
-
         return index();
     }
 
@@ -180,7 +184,6 @@ public class UserController {
             User newUser = new User(username,password, realName,email,phoneNumber, roleText,new Date());
             userService.addUser(newUser);
         }
-
         return index(); //返回主页
     }
 
@@ -218,14 +221,11 @@ public class UserController {
         return userService.isValidateUser(username, password);
     }
 
-
-
-
     public static final String CONTENTPAGE = "contentpages";
     public static final String ROLE = "roles";
     public static final String USERS = "users";
     public static final String REMAINDER = "remainder";
-    public static final String SUM = "sum";
+    public static final String INCOMETOTAL = "sum";
     public static final String USER= "user";
     public static final String DISHES= "dishes";
     public static final String USERNAME = "username";
@@ -277,6 +277,15 @@ public class UserController {
     private IUserService userService;
     @Autowired
     private IAccountService accountService;
+    @Autowired
+    private IIncomeService incomeService;
+    @Autowired
+    private IFoodService foodService;
+    @Autowired
+    private IPaymentService paymentService;
+    @Autowired
+    private IFoodTypeService foodTypeService;
+
 //    @Autowired
 //    private IDishService dishService;
 //    @Autowired

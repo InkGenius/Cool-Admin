@@ -4,10 +4,6 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
-		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/repast</property>
-		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.username">root</property>
-		<property name="connection.password">123456</property>
 		<!--<property name="connection.shutdown">true</property>-->
 		<property name="show_sql">true</property>
 		<property name="jdbc.batch_size">0</property>
@@ -15,7 +11,7 @@
 		<!--不加上这两句，存入数据库时乱码-->
 		<property name="connection.useUnicode">true</property>
 		<property name="connection.characterEncoding">UTF-8</property>
-
+		<!--?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull-->
 		<mapping resource="/orm/User.hbm.xml" />
 		<mapping resource="/orm/Account.hbm.xml" />
         <mapping resource="/orm/Payment.hbm.xml" />

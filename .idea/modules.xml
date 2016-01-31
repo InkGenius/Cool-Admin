@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Spitter/Spitter.iml" filepath="$PROJECT_DIR$/../Spitter/Spitter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Spitter-web.iml" filepath="$PROJECT_DIR$/../Spitter-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/charisma-admin.iml" filepath="$PROJECT_DIR$/charisma-admin.iml" />
     </modules>
   </component>

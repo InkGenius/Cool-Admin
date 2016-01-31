@@ -23,4 +23,5 @@ public interface IBaseModelDao<T extends Serializable,PK extends Serializable> {
     List<T> findByHql(String hql, Object[] paramters);
     List<T> findAll();
     Map<String,Object> convertObjectToMap(T t);
+
 }

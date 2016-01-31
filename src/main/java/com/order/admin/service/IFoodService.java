@@ -24,4 +24,5 @@ public interface IFoodService {
 
     List<Map<String,Object>> converFoodsToMap(List<Food> foods);
     Map<String,Object> convertFoodToMap(Food food);
+    List<Food> findFoodByType(String typeGuid);
 }

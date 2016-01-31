@@ -1,6 +1,7 @@
 package com.order.admin.dao.impl;
 
 import com.order.admin.dao.IBaseModelDao;
+import com.order.model.Account;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.hibernate.Query;
 import org.hibernate.Session;
